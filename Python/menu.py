@@ -1,97 +1,104 @@
 import curses
+import subprocess
+from pathlib import Path
+from time import sleep
+import json
+
 # Permite controlar la terminal (capturar teclas, redibujar pantalla, ...)
 import requests
 
 
 def opcion1():
     # 1. Limpiar la pantalla
-    strscr.clear()
-
-    # 2. Escribir por pantalla (Feedback visual inmediato)
-    strscr.addstr(0, 0, "Has elegido la opción 1")
-    strscr.addstr(1, 0, "Enviando mensaje a Discord...", curses.A_DIM)
-    strscr.refresh()  # Importante para ver los cambios antes del request
-
- 
-    # 4. Finalizar
-    strscr.addstr(5, 0, "Pulsa una tecla para volver al menú")
-    strscr.refresh()  # Refrescar de nuevo para mostrar el resultado
-    strscr.getch()
+    terminal.clear()
+    
+    datos = json.load(open("json/datos.json"))
+    nombre = datos["nombre"]
+    edad = datos["edad"]
+    terminal.addstr(0,0, "El nombre es: " + nombre)
+    terminal.addstr(1,0, "La edad es: " + str(edad))
+    terminal.getch()
+    
+    curses.endwin()
+    retorno = subprocess.run( ["./pedirDatos.sh", str(nombre), str(edad) ] )
+   
 
 def opcion2():
      # Limpiar la pantalla
-    strscr.clear()
+    terminal.clear()
 
     # Escribir por pantalla
-    strscr.addstr(0, 0, "Has elegido la opción 2")
-    strscr.addstr(1, 0, "Pulsa una tecla para volver al menu")
+    terminal.addstr(0, 0, "Has elegido la opción 2")
+    terminal.addstr(1, 0, "Pulsa una tecla para volver al menu")
 
      # Una pausa
-    strscr.getch()
+    terminal.getch()
 
 
 def opcion3():
     # Limpiar la pantalla
-    strscr.clear()
+    terminal.clear()
 
     # Escribir por pantalla
-    strscr.addstr(0, 0, "Has elegido la opción 3")
-    strscr.addstr(1, 0, "Pulsa una tecla para volver al menu")
+    terminal.addstr(0, 0, "Has elegido la opción 3")
+    terminal.addstr(1, 0, "Pulsa una tecla para volver al menu")
 
     # Una pausa
-    strscr.getch()
+    terminal.getch()
 
 def opcion4():
     opciones = ["Si", "No"]
     seleccion = 0
+    # CORRECCIÓN 1: Debe ser True para que el bucle arranque
+    bucleActivo = True
 
-    while True:  # 1. Agregamos el bucle infinito para mantener la pantalla
-        strscr.clear()
-        strscr.addstr(0, 0, "Deseas Salir?")
+    while bucleActivo:
+        terminal.clear()
+        terminal.addstr(0, 0, "¿Deseas Salir?")
 
-        # Tu lógica de dibujo exacta
         for i, opcion in enumerate(opciones):
+            # Estética: Agregué un espacio " i*5 " para que no estén tan pegados
             if i == seleccion:
-                strscr.addstr(i + 2, 0, opcion, curses.A_REVERSE)
+                terminal.addstr(4, i*5, opcion, curses.A_REVERSE)
             else:
-                strscr.addstr(i + 2, 0, opcion)
+                terminal.addstr(4, i*5, opcion)
 
-        tecla = strscr.getch()
+        tecla = terminal.getch()
 
-        # Tu lógica de movimiento exacta
         if tecla == curses.KEY_RIGHT and seleccion < len(opciones) - 1:
             seleccion += 1
         elif tecla == curses.KEY_LEFT and seleccion > 0:
             seleccion -= 1
-        elif tecla == 10:
+        elif tecla == 10: # Enter
             if seleccion == 0:
-                break
+                return False   # Confirmamos la salida
             elif seleccion == 1:
-                return False
+                # Eligió "No"
+                return True
 
-
-
-def menu(strscr):
-    opciones = ["Opción 1","Opción 2", "Opción 3", "Salir"]
+def menu(terminal):
+    opciones = ["Editar JSON","Opción 2", "Opción 3", "Listar", "Salir"]
     seleccion = 0
-    while True:
+    bucleActivo = True
+
+    while bucleActivo:
         # Limpiar la pantalla
-        strscr.clear()
+        terminal.clear()
 
         # Escribir por pantalla
-        strscr.addstr("MENÚ PRINCIPAL")
+        terminal.addstr("MENÚ PRINCIPAL")
 
         #Pintar las opciones en la terminal
         for i, opcion in enumerate(opciones):
             if i == seleccion:
-                strscr.addstr( i+2 , 0, opcion, curses.A_REVERSE)
+                terminal.addstr( i+2 , 0, opcion, curses.A_REVERSE)
             else:
-                strscr.addstr( i+2 , 0, opcion)
+                terminal.addstr( i+2 , 0, opcion)
 
-        strscr.addstr("\n\nElija una opción")
+        terminal.addstr("\n\nElija una opción")
 
         # Espera a que el usuario pulse una tecla
-        tecla = strscr.getch()
+        tecla = terminal.getch()
 
 
         if tecla == curses.KEY_DOWN and seleccion < len(opciones) - 1:
@@ -106,17 +113,20 @@ def menu(strscr):
             elif seleccion == 2:
                 opcion3()
             elif seleccion == 3:
-                opcion4()
+                listar()
+            elif seleccion == 4:
+                bucleActivo = opcion4()
+
 
 
 
 if __name__ == '__main__':
     print("inicio")
     # Inicializa curses y obtiene la pantalla (terminal)
-    strscr = curses.initscr()
+    terminal = curses.initscr()
 
     # Activar detección de teclas especiales (flechas, enter, etc)
-    strscr.keypad(True)
+    terminal.keypad(True)
 
     # Desactiva el eco del teclado
     # Las teclas pulsadas no se muestran
@@ -129,10 +139,10 @@ if __name__ == '__main__':
     curses.curs_set(0)
 
     try:
-        menu(strscr)
+        menu(terminal)
     finally:
         # Libera los recursos de la terminal
         curses.nocbreak()
-        strscr.keypad(False)
+        terminal.keypad(False)
         curses.echo()
         curses.endwin()
