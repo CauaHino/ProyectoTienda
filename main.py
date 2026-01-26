@@ -113,7 +113,7 @@ def menu(terminal):
             elif seleccion == 2:
                 opcion3()
             elif seleccion == 3:
-                listar()
+                continue
             elif seleccion == 4:
                 bucleActivo = opcion4()
 
