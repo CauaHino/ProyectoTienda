@@ -21,19 +21,17 @@ def opcion1():
     
     curses.endwin()
     retorno = subprocess.run( ["./pedirDatos.sh", str(nombre), str(edad) ] )
-   
 
 def opcion2():
-     # Limpiar la pantalla
+    # Limpiar la pantalla
     terminal.clear()
 
     # Escribir por pantalla
-    terminal.addstr(0, 0, "Has elegido la opción 2")
+    terminal.addstr(0, 0, "Has elegido la opción 3")
     terminal.addstr(1, 0, "Pulsa una tecla para volver al menu")
 
-     # Una pausa
+    # Una pausa
     terminal.getch()
-
 
 def opcion3():
     # Limpiar la pantalla
@@ -77,7 +75,7 @@ def opcion4():
                 return True
 
 def menu(terminal):
-    opciones = ["Editar JSON","Opción 2", "Opción 3", "Listar", "Salir"]
+    opciones = ["Crear","Buscar", "Ver la Tiena", "Salir"]
     seleccion = 0
     bucleActivo = True
 
