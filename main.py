@@ -10,7 +10,7 @@ import requests
 
 def opcion1():
     # 1. Limpiar la pantalla
-    terminal.clear()
+    terminal.clear() 
     
     datos = json.load(open("json/datos.json"))
     nombre = datos["nombre"]
@@ -37,9 +37,7 @@ def opcion3():
     # Limpiar la pantalla
     terminal.clear()
 
-    # Escribir por pantalla
-    terminal.addstr(0, 0, "Has elegido la opción 3")
-    terminal.addstr(1, 0, "Pulsa una tecla para volver al menu")
+    ruta = "/tiendas/PerfumeriaPaco"
 
     # Una pausa
     terminal.getch()
@@ -74,8 +72,9 @@ def opcion4():
                 # Eligió "No"
                 return True
 
+
 def menu(terminal):
-    opciones = ["Crear","Buscar", "Ver la Tiena", "Salir"]
+    opciones = ["Crear","Buscar", "Ver la Tienda", "Salir"]
     seleccion = 0
     bucleActivo = True
 
@@ -111,9 +110,9 @@ def menu(terminal):
             elif seleccion == 2:
                 opcion3()
             elif seleccion == 3:
-                continue
-            elif seleccion == 4:
                 bucleActivo = opcion4()
+                
+                
 
 
 
