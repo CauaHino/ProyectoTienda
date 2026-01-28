@@ -3,41 +3,55 @@
 clear
 path=$1
 
-salir=false
-crearCategoria=true
-while [!$salir]; do
-    read -p "Indica el nombre para la nueva categoria: " nombreCategoria
+if [ -z "$path" ]; then
+    echo "Error: Debes especificar una ruta al ejecutar el script."
+    echo "Uso: $0 /ruta/destino"
+    exit 1
+fi
 
-    for i in $(ls "$path"); do
-        if [ "$i" == "$nombreCategoria" ]; then
-            clear
-            echo -e "\nError: Ya existe una categoria con ese nombre\n"
-            salir=true
-            crearCategoria=false
-            break
-        fi
-    done
+while true; do
+    read -p "Indica el nombre para la nueva categoría (escribe q para salir): " nombreCategoria
 
     if [ "$nombreCategoria" == "/" ]; then
         clear
-        echo -e "\nSaliendo del script de creacion de categorias...\n"
+        echo -e "\nSaliendo del script de creación de categorías...\n"
         exit 0
     fi
+
     if [ -z "$nombreCategoria" ]; then
         clear
-        echo -e "\nError: El nombre de la categoria no puede estar vacio\n"
+        echo -e "\nError: El nombre de la categoría no puede estar vacío.\n"
         continue
     fi
+
+    if [[ ! "$nombreCategoria" =~ ^[a-zA-Z0-9]+$ ]]; then
+        clear
+        echo -e "\nError: El nombre contiene caracteres no válidos.\nSolo se permiten letras y números (sin espacios ni símbolos).\n"
+        continue
+    fi
+
+    if [ -d "$path/$nombreCategoria" ]; then
+        clear
+        echo -e "\nError: Ya existe una categoría con ese nombre.\n"
+        continue
+    fi
+
+    if [  "$path/$nombreCategoria" == "q" ]; then
+        clear
+        echo -e "\nError: Ya existe una categoría con ese nombre.\n"
+        continue
+    fi
+
 
     mkdir "$path/$nombreCategoria"
 
     if [ $? -eq 0 ]; then
         clear
-        echo -e "\nLa carpeta $nombreCategoria se ha creado correctamente en  $path\n"
+        echo -e "\nLa carpeta $nombreCategoria se ha creado correctamente en $path\n"
         exit 0
     else
         clear
-        echo -e "\nError: No se ha podido crear la carpeta $nombre en $path\n"
-        exit 0
+        echo -e "\nError: No se ha podido crear la carpeta $nombreCategoria en $path\n"
+        exit 1
     fi
 done
