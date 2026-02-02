@@ -4,13 +4,10 @@ from pathlib import Path
 from time import sleep
 import json
 
-# Permite controlar la terminal (capturar teclas, redibujar pantalla, ...)
-import requests
-
 
 def opcion1():
     # 1. Limpiar la pantalla
-    terminal.clear()
+    terminal.clear() 
     
     datos = json.load(open("json/datos.json"))
     nombre = datos["nombre"]
@@ -20,28 +17,24 @@ def opcion1():
     terminal.getch()
     
     curses.endwin()
-    retorno = subprocess.run( ["./pedirDatos.sh", str(nombre), str(edad) ] )
-   
+    retorno = subprocess.run( ["./scripts/bash/pedirDatos.sh", str(nombre), str(edad) ] )
 
 def opcion2():
-     # Limpiar la pantalla
-    terminal.clear()
-
-    # Escribir por pantalla
-    terminal.addstr(0, 0, "Has elegido la opción 2")
-    terminal.addstr(1, 0, "Pulsa una tecla para volver al menu")
-
-     # Una pausa
-    terminal.getch()
-
-
-def opcion3():
     # Limpiar la pantalla
     terminal.clear()
 
     # Escribir por pantalla
     terminal.addstr(0, 0, "Has elegido la opción 3")
     terminal.addstr(1, 0, "Pulsa una tecla para volver al menu")
+
+    # Una pausa
+    terminal.getch()
+
+def opcion3():
+    # Limpiar la pantalla
+    terminal.clear()
+
+    ruta = "/tiendas/PerfumeriaPaco"
 
     # Una pausa
     terminal.getch()
@@ -76,8 +69,9 @@ def opcion4():
                 # Eligió "No"
                 return True
 
+
 def menu(terminal):
-    opciones = ["Editar JSON","Opción 2", "Opción 3", "Listar", "Salir"]
+    opciones = ["Crear","Buscar", "Ver la Tienda", "Salir"]
     seleccion = 0
     bucleActivo = True
 
@@ -113,9 +107,9 @@ def menu(terminal):
             elif seleccion == 2:
                 opcion3()
             elif seleccion == 3:
-                continue
-            elif seleccion == 4:
                 bucleActivo = opcion4()
+                
+                
 
 
 
