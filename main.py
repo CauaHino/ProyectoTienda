@@ -4,9 +4,6 @@ from pathlib import Path
 from time import sleep
 import json
 
-# Permite controlar la terminal (capturar teclas, redibujar pantalla, ...)
-import requests
-
 
 def opcion1():
     # 1. Limpiar la pantalla
