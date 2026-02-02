@@ -17,7 +17,7 @@ def opcion1():
     terminal.getch()
     
     curses.endwin()
-    retorno = subprocess.run( ["./scripts/bash/pedirDatos.sh", str(nombre), str(edad) ] )
+    retorno = subprocess.run( ["./pedirDatos.sh", str(nombre), str(edad) ] )
 
 def opcion2():
     # Limpiar la pantalla
