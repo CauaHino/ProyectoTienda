@@ -1,8 +1,7 @@
 #!/bin/bash
 
 read -p "Ingrese el codigo del producto: " codigo
-cd ../..
-ruta=$find --name "$codigo.json"
+ruta=$(find /tiendas/PerfumeriaPaco/ -name "$codigo.json")
 
 if [[ $ruta = "" ]]; then
     echo "El producto con codigo $codigo no existe."
