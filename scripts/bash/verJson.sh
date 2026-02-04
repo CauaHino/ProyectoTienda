@@ -30,7 +30,7 @@ if [[ $opcion =~ [^a-zA-Z0-9] ]]; then
         exit 1
 fi
 
-if [[ $opcion -eq 'e' || $opcion -eq 'E' ]]; then
+if [[ $opcion == 'e' || $opcion == 'E' ]]; then
         read -e -p "Nombre: " -i "$nombre" nombre
         read -e -p "Precio: " -i "$precio" precio
         read -e -p "Stock: " -i "$stock" stock
@@ -43,7 +43,7 @@ if [[ $opcion -eq 'e' || $opcion -eq 'E' ]]; then
         echo "Mililitros: $ml"
         echo "Descripción: $descripcion"
 
-elif [[ $opcion -eq 'b' || $opcion -eq 'B' ]]; then
+elif [[ $opcion == 'b' || $opcion == 'B' ]]; then
     read -e -p "¿Estás seguro que deseas borrar el producto con codigo $codigo? (s/n): " confirmar
     if [[ $confirmar -eq 's' || $confirmar -eq 'S' ]]; then
         rm "$ruta"
@@ -53,6 +53,6 @@ elif [[ $opcion -eq 'b' || $opcion -eq 'B' ]]; then
         echo "Operación de borrado cancelada."
         exit 1
     fi    
-elif [[ $opcion -eq 'v' || $opcion -eq 'V' ]]; then
+elif [[ $opcion == 'v' || $opcion == 'V' ]]; then
     exit 0
 fi
