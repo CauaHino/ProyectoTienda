@@ -42,4 +42,14 @@ if [[ $opcion -eq 'e' || $opcion -eq 'E' ]]; then
         echo "Stock: $stock"
         echo "Mililitros: $ml"
         echo "Descripción: $descripcion"
-    fi
+fi
+
+if [[ $opcion -eq 'b' || $opcion -eq 'B' ]]; then
+    rm "$ruta"
+    echo "Producto con codigo $codigo borrado."
+    exit 1
+fi
+
+if [[ $opcion -eq 'v' || $opcion -eq 'V' ]]; then
+    exit 1
+fi
