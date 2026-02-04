@@ -45,9 +45,15 @@ if [[ $opcion -eq 'e' || $opcion -eq 'E' ]]; then
 fi
 
 if [[ $opcion -eq 'b' || $opcion -eq 'B' ]]; then
-    rm "$ruta"
-    echo "Producto con codigo $codigo borrado."
-    exit 1
+    read -e -p "¿Estás seguro que deseas borrar el producto con codigo $codigo? (s/n): " confirmar
+    if [[ $confirmar -eq 's' || $confirmar -eq 'S' ]]; then
+        rm "$ruta"
+        echo "Producto con codigo $codigo borrado."
+        exit 1
+    else
+        echo "Operación de borrado cancelada."
+        exit 1
+    fi    
 fi
 
 if [[ $opcion -eq 'v' || $opcion -eq 'V' ]]; then
