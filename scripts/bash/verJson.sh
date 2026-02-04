@@ -22,14 +22,23 @@ echo "Stock: $stock"
 echo "Mililitros: $ml"
 echo "Descripción: $descripcion"
 
-read -e -p "Nombre: " -i "$nombre" nombre
-read -e -p "Precio: " -i "$precio" precio
-read -e -p "Stock: " -i "$stock" stock
-read -e -p "Mililitros: " -i "$ml" ml
-read -e -p "Descripción: " -i "$descripcion" descripcion
+read -e -p "¿Que deseas hacer? Editar(e), Borrar(b), Volver(v)" opcion
 
-echo "Nombre: $nombre"
-echo "Precio: $precio"
-echo "Stock: $stock"
-echo "Mililitros: $ml"
-echo "Descripción: $descripcion"
+if [[ $nombre =~ [^a-zA-Z0-9] ]]; then
+		echo "La variable no puede tener caracteres especiales"
+        read -n1 -p "Pulsa una tecla para continuar..."
+        exit 1
+    if($opcion == 'e' || $opcion == 'E')then
+        read -e -p "Nombre: " -i "$nombre" nombre
+        read -e -p "Precio: " -i "$precio" precio
+        read -e -p "Stock: " -i "$stock" stock
+        read -e -p "Mililitros: " -i "$ml" ml
+        read -e -p "Descripción: " -i "$descripcion" descripcion
+
+        echo "Nombre: $nombre"
+        echo "Precio: $precio"
+        echo "Stock: $stock"
+        echo "Mililitros: $ml"
+        echo "Descripción: $descripcion"
+    fi
+fi

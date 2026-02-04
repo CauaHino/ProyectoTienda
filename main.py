@@ -22,10 +22,8 @@ def opcion1():
 def opcion2():
     # Limpiar la pantalla
     terminal.clear()
-
-    # Escribir por pantalla
-    terminal.addstr(0, 0, "Has elegido la opción 3")
-    terminal.addstr(1, 0, "Pulsa una tecla para volver al menu")
+    curses.endwin()
+    buscar = subprocess.run(['bash','./scripts/bash/verJson.sh'])
 
     # Una pausa
     terminal.getch()
