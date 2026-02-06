@@ -14,7 +14,8 @@ fi
 
 if [[ "$numero" =~ ^[0-9]+$ ]]; then
 
-    contenido=$(sed -n "$numero"'p' ./rutas_busqueda.txt)   
+    contenido=$(sed -n "$numero"'p' ./rutas_busqueda.txt)
+       
     nombre=$(jq -r '.nombre' "$contenido")
     precio=$(jq -r '.precio'  "$contenido")
     stock=$(jq -r '.stock' "$contenido")
