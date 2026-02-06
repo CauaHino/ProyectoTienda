@@ -2,9 +2,9 @@
 
 clear
 
-read -p "Indica un filtro": filtro
+read -p "Indica un filtro: " filtro
 
-python3 busqueda.py $filtro
+python3 ./scripts/Python/busqueda.py $filtro
 cat ./nombres_busqueda.txt
 read -p "Indica el numero de producto a editar, s para salir" numero
 
