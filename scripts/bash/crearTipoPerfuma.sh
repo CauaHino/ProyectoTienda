@@ -19,7 +19,7 @@ while $salir; do
     if [  "$path/$nombreTipoPerfume" == "q" ]; then
         clear
         echo "Has luego..."
-        sleep 3
+        sleep 5
         salir=false
         continue
     fi
@@ -27,27 +27,27 @@ while $salir; do
     if [ "$nombreTipoPerfume" == "/" ]; then
         clear
         echo -e "\nError: el nombre de la TipoPerfume no puede contener '/'...\n"
-        sleep 3
+        sleep 5
     fi
 
     if [ -z "$nombreTipoPerfume" ]; then
         clear
         echo -e "\nError: El nombre de la categoría no puede estar vacío.\n"
-        sleep 3
+        sleep 5
     fi
 
-    if [[ ! "$nombreTipoPerfume" =~ ^[a-zA-Z0-9]+$ ]]; then
+    if [[ ! "$nombreTipoPerfume" =~ ^[a-zA-Z0-9] ]]; then
         clear
         echo -e "\nError: El nombre contiene caracteres no válidos.\nSolo se permiten letras y números (sin espacios ni símbolos).\n"
-        sleep 3
+        sleep 5
     fi
 
     if [ -d "$path/$nombreTipoPerfume" ]; then
         clear
         echo -e "\nError: Ya existe una TipoPerfume con ese nombre.\n"
-        sleep 3
+        sleep 5
     fi
-
+    
     mkdir "$path/$nombreTipoPerfume"
 
     if [ $? -eq 0 ]; then

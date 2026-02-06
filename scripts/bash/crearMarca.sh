@@ -20,13 +20,14 @@ while true; do
     if [  "$path/$nombreTipoPerfume" == "q" ]; then
         clear
         echo "Has luego..."
-        sleep 3
+        sleep 5
         salir=false
         continue
     fi
 
     if [ -z "$nuevaMarca" ]; then
         echo -e "\nError: El nombre de la marca no puede estar vacío."
+        sleep 5
         continue
     fi
 
