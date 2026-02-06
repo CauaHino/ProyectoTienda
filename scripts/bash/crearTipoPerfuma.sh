@@ -20,7 +20,7 @@ while $salir; do
 
     if [  "$nombreTipoPerfume" == "q" ]; then
         clear
-        echo "Has luego..."
+        echo "Hasta luego..."
         sleep 3
         exit 0
     fi
@@ -71,6 +71,4 @@ while $salir; do
             sleep 5
         fi
     fi
-
-    
 done
