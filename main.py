@@ -22,9 +22,36 @@ def opcion1():
 def opcion2():
     # Limpiar la pantalla
     terminal.clear()
-    curses.endwin()
-    buscar = subprocess.run(['bash','./scripts/bash/verJson.sh'])
 
+    opciones = ["Buscar por Codigo", "Buscar por filtro", "Salir"]
+    seleccion = 0
+    bucleActivo = True
+    while bucleActivo:
+        terminal.clear()
+        terminal.addstr(0,0, "Opciones:")
+        for i, opcion in enumerate(opciones):
+            if i == seleccion:
+                terminal.addstr(i+2, 0, opcion, curses.A_REVERSE)
+            else:
+                terminal.addstr(i+2, 0, opcion)
+        
+        terminal.addstr("\n\nElija una opción")
+        tecla = terminal.getch()
+
+        if tecla == curses.KEY_DOWN and seleccion < len(opciones) - 1:
+            seleccion += 1
+        elif tecla == curses.KEY_UP and seleccion > 0:
+            seleccion -= 1
+        elif tecla == ord('\n'):
+            if seleccion == 0:
+                curses.endwin()
+                subprocess.run( ["bash", "scripts/bash/verJson.sh"] )
+            elif seleccion == 1:
+                curses.endwin()
+                subprocess.run( ["bash", "scripts/bash/filtrar.sh"] )
+            elif seleccion == 2:
+                bucleActivo = False
+        
     # Una pausa
     terminal.getch()
 

@@ -4,6 +4,18 @@ clear
 path=$1
 salir=true
 
+<<<<<<< HEAD
+if [ -z "$path" ]; then
+    echo "Error: Debes especificar una ruta al ejecutar el script."
+    echo "Uso: $0 /ruta/destino"
+    exit 1
+fi
+
+while $salir; do
+    read -p "Indica el nombre para la nueva categoría (escribe q para salir): " nombreCategoria
+
+    if [  "$path/$nombreCategoria" == "q" ]; then
+=======
 if [ -z "$path" ] || [ ! -d "$path" ]; then
     echo "Error: Ruta de categoría no válida."
     exit 1
@@ -18,6 +30,7 @@ while true; do
     read -p "Indica el nombre de la nueva marca (escribe q para salir) => " nuevaMarca
 
     if [  "$path/$nombreTipoPerfume" == "q" ]; then
+>>>>>>> main
         clear
         echo "Has luego..."
         sleep 5
