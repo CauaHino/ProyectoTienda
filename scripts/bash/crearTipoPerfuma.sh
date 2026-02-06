@@ -11,7 +11,10 @@ if [ -z "$path" ]; then
 fi
 
 while $salir; do
-    read -p "Indica el nombre para la nueva categoria de perfume (escribe q para salir): " nombreTipoPerfume
+    clear
+    echo "========= CREAR TIPO DE PERFUME ========="
+    echo ""
+    read -p "Indica el nombre para la nueva categoria de perfume (escribe q para salir) > " nombreTipoPerfume
 
     if [  "$path/$nombreTipoPerfume" == "q" ]; then
         clear
