@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 
 def buscar():
-	ruta = Path.cwd() / "tiendas" # Cambiar por la ruta de la tiedna 
+	ruta = Path.cwd() / "tiendas/PerfumeriasPaco" # Cambiar por la ruta de la tiedna 
 	filtro = sys.argv[1].lower()# Filtro que pasamos al script 
 	rutas = open("rutas_busqueda.txt", "w", encoding="utf-8")# Archivo para almacenar rutas 
 	nombres = open("nombres_busqueda.txt", "w", encoding="utf-8")# Archivo para almacenar nombres 
