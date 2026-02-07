@@ -40,13 +40,7 @@ if [[ $opcion == 'e' || $opcion == 'E' ]]; then
         read -e -p "Mililitros: " -i "$ml" ml
         read -e -p "Descripción: " -i "$descripcion" descripcion
 
-        jq -n \
-      --arg nom "$nombre" \
-      --arg pre "$precio" \
-      --arg sto "$stock" \
-      --arg ml "$ml" \
-      --arg des "$descripcion" \
-      '{nombre: $nom, precio: $pre, stock: $sto, ml: $ml, descripcion: $des}' > "$ruta"
+        python3 ../Python/editar.py "$ruta" "$nombre" "$precio" "$stock" "$ml" "$descripcion"
 
         echo "Nombre: $nombre"
         echo "Precio: $precio"
