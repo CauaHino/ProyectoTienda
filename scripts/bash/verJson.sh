@@ -33,6 +33,7 @@ if [[ $opcion =~ [^a-zA-Z0-9] ]]; then
 fi
 
 if [[ $opcion == 'e' || $opcion == 'E' ]]; then
+   clear
     echo "========= MODIFICAR PERFUME ========="
         read -e -p "Nombre: " -i "$nombre" nombre
         read -e -p "Precio: " -i "$precio" precio
@@ -40,7 +41,7 @@ if [[ $opcion == 'e' || $opcion == 'E' ]]; then
         read -e -p "Mililitros: " -i "$ml" ml
         read -e -p "Descripción: " -i "$descripcion" descripcion
 
-        python3 ../Python/guardaDatos.py "$ruta" "$nombre" "$precio" "$stock" "$ml" "$descripcion"
+        python3 ./scripts/Python/guardaDatos.py "$ruta" "$nombre" "$precio" "$stock" "$ml" "$descripcion"
 
         echo "Nombre: $nombre"
         echo "Precio: $precio"
