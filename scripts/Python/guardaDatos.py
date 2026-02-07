@@ -17,5 +17,9 @@ datos_nuevos = {
     "ml": ml,
     "descripcion": descripcion
 }
+try:
+    with open(ruta, "w") as archivo:
+        json.dump(datos_nuevos, archivo, indent=4)
+except Exception as e:
+    print(f"Error al guardar los datos: {e}")
 
-json.dump(datos_nuevos, open(ruta, "w"))
