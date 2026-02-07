@@ -15,13 +15,15 @@ fi
 
 read -p "Indica el numero de producto a editar (s para salir): " numero
 
-if [ "$numero" == "s" ]; then
+if [[ "$numero" == "s" ]]; then
     echo "Hasta Luego"
     sleep 2
     exit 0
 fi
 
 if [[ "$numero" =~ ^[0-9]+$ ]]; then
+
+    echo "========= MODIFICAR PERFUME ========="
 
     contenido=$(sed -n "$numero"'p' ./rutas_busqueda.txt)
 

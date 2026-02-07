@@ -1,5 +1,8 @@
 #!/bin/bash
 
+clear
+echo "========= MODIFICAR PERFUME ========="
+
 read -p "Ingrese el codigo del producto: " codigo
 ruta=$(find /tiendas/PerfumeriaPaco/ -name "$codigo.json")
 
