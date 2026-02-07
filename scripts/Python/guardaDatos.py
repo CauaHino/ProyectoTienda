@@ -9,12 +9,13 @@ ml = sys.argv[5]
 descripcion = sys.argv[6]
 
 datos = json.load(open(ruta))
-print(datos)
 
-# datos["nombre"] = nombre
-# datos["precio"] = precio
-# datos["stock"] = stock
-# datos["ml"] = ml
-# datos["descripcion"] = descripcion
+datos_nuevos = {
+    "nombre": nombre,
+    "precio": precio,
+    "stock": stock,
+    "ml": ml,
+    "descripcion": descripcion
+}
 
-# json.dump(datos, open(ruta, "w"))
+json.dump(datos_nuevos, open(ruta, "w"))
