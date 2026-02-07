@@ -2,8 +2,6 @@
 
 clear
 path=$1
-salir=true
-crear=true
 
 if [ -z "$path" ]; then
     echo "Error: Debes especificar una ruta al ejecutar el script."
@@ -11,7 +9,7 @@ if [ -z "$path" ]; then
     exit 1
 fi
 
-while $salir; do
+while true; do
     clear
     crear=true
     echo "========= CREAR TIPO DE PERFUME ========="
@@ -25,7 +23,7 @@ while $salir; do
         exit 0
     fi
 
-    if [ "$nombreTipoPerfume" == *"/"* ]; then
+    if [[ "$nombreTipoPerfume" == *"/"* ]]; then
         clear
         echo -e "\nError: el nombre de la TipoPerfume no puede contener '/'...\n"
         crear=false
@@ -62,9 +60,26 @@ while $salir; do
         if [ $? -eq 0 ]; then
             chmod 777 "$path/$nombreTipoPerfume"
             clear
-            echo -e "\nLa carpeta $nombreTipoPerfume se ha creado correctamente en $path\n"
-            salir=false
-            sleep 5
+            echo -e "\nEl tipo de perfume $nombreTipoPerfume se ha creado correctamente en $path\n"
+            sleep 4
+
+            while true; do
+                clear
+                read -p "Desea seguir creando marcas? (pulse Enter para continuar o 's' para salir): " continuar
+
+                if [[ -z $continuar ]]; then
+                    break
+                elif [[ $continuar == "s" || $continuar == "S" ]]; then
+                    clear
+                    echo "Hasta luego..."
+                    sleep 3
+                    exit 0
+                else
+                    clear
+                    echo -e "\nIngrese la tecla indicada\n"
+                    sleep 3
+                fi                    
+            done
         else
             clear
             echo -e "\nError: No se ha podido crear la carpeta $nombreTipoPerfume en $path\n"
