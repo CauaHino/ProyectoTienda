@@ -40,7 +40,7 @@ if [[ $opcion == 'e' || $opcion == 'E' ]]; then
         read -e -p "Mililitros: " -i "$ml" ml
         read -e -p "Descripción: " -i "$descripcion" descripcion
 
-        python3 ../Python/editar.py "$ruta" "$nombre" "$precio" "$stock" "$ml" "$descripcion"
+        python3 ../Python/guardaDatos.py "$ruta" "$nombre" "$precio" "$stock" "$ml" "$descripcion"
 
         echo "Nombre: $nombre"
         echo "Precio: $precio"
