@@ -4,7 +4,7 @@ clear
 path=$1
 
 if [ -z "$path" ] || [ ! -d "$path" ]; then
-    echo "Error: Ruta de categoría no válida."
+    echo "Error: Ruta de marca no válida."
     exit 1
 fi
 
@@ -13,7 +13,7 @@ while true; do
     crear=true
     echo "========= CREAR MARCA ========="
     echo ""
-    echo "Categoría => $(basename "$path")"
+    echo "Tipo de Perfume => $(basename "$path")"
     echo ""
     read -p "Indica el nombre de la nombre marca (escribe s para salir) => " nombreMarca
 
