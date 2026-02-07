@@ -1,7 +1,6 @@
 #!/bin/bash
 
 clear
-echo "========= MODIFICAR PERFUME ========="
 
 read -p "Ingrese el codigo del producto: " codigo
 ruta=$(find /tiendas/PerfumeriaPaco/ -name "$codigo.json")
@@ -34,6 +33,7 @@ if [[ $opcion =~ [^a-zA-Z0-9] ]]; then
 fi
 
 if [[ $opcion == 'e' || $opcion == 'E' ]]; then
+    echo "========= MODIFICAR PERFUME ========="
         read -e -p "Nombre: " -i "$nombre" nombre
         read -e -p "Precio: " -i "$precio" precio
         read -e -p "Stock: " -i "$stock" stock
