@@ -11,7 +11,7 @@ def buscar():
 	for archivo in ruta.rglob("*.json"):
 		# Cargar objeto json
 		datos = json.load(open(archivo))
-		descripcion = datos.get("descripcion")
+		descripcion = datos.get("descripcion", "").lower()
 		# Comprobar si descripcion tiene parte del filtro
 		# Independientemente mayusculas de minusculas
 		# En caso de coincidencia meter a la lista
