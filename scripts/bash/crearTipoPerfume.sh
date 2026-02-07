@@ -3,9 +3,8 @@
 clear
 path=$1
 
-if [ -z "$path" ]; then
-    echo "Error: Debes especificar una ruta al ejecutar el script."
-    echo "Uso: $0 /ruta/destino"
+if [ -z "$path" ] || [ ! -d "$path" ]; then
+    echo "Error: Ruta del tipo de perfume no valida."
     exit 1
 fi
 
