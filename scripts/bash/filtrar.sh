@@ -6,7 +6,7 @@ read -p "Indica un filtro: " filtro
 
 python3 ./scripts/Python/busqueda.py $filtro
 
-if [ -s ./nombres_busqueda.txt ]; then
+if [[ -s ./nombres_busqueda.txt ]]; then
     cat ./nombres_busqueda.txt
 else
     echo "No se encontraron productos con ese filtro."
@@ -41,6 +41,14 @@ if [[ "$numero" =~ ^[0-9]+$ ]]; then
     read -e -p "Stock: " -i "$stock" stock
     read -e -p "Mililitros: " -i "$ml" ml
     read -e -p "Descripción: " -i "$descripcion" descripcion
+
+    jq -n \
+      --arg nom "$nombre" \
+      --arg pre "$precio" \
+      --arg sto "$stock" \
+      --arg ml "$ml" \
+      --arg des "$descripcion" \
+      '{nombre: $nom, precio: $pre, stock: $sto, ml: $ml, descripcion: $des}' > "$contenido"
 
     echo "Nombre: $nombre"
     echo "Precio: $precio"

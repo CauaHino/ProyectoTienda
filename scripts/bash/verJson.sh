@@ -37,6 +37,14 @@ if [[ $opcion == 'e' || $opcion == 'E' ]]; then
         read -e -p "Mililitros: " -i "$ml" ml
         read -e -p "Descripción: " -i "$descripcion" descripcion
 
+        jq -n \
+      --arg nom "$nombre" \
+      --arg pre "$precio" \
+      --arg sto "$stock" \
+      --arg ml "$ml" \
+      --arg des "$descripcion" \
+      '{nombre: $nom, precio: $pre, stock: $sto, ml: $ml, descripcion: $des}' > "$ruta"
+
         echo "Nombre: $nombre"
         echo "Precio: $precio"
         echo "Stock: $stock"
