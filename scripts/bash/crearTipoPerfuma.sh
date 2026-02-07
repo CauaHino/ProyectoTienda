@@ -16,16 +16,16 @@ while $salir; do
     crear=true
     echo "========= CREAR TIPO DE PERFUME ========="
     echo ""
-    read -p "Indica el nombre para la nueva categoria de perfume (escribe q para salir) > " nombreTipoPerfume
+    read -p "Indica el nombre para la nueva categoria de perfume (escribe s para salir) > " nombreTipoPerfume
 
-    if [  "$nombreTipoPerfume" == "q" ]; then
+    if [  "$nombreTipoPerfume" == "s" ]; then
         clear
         echo "Hasta luego..."
         sleep 3
         exit 0
     fi
 
-    if [ "$nombreTipoPerfume" == "/" ]; then
+    if [ "$nombreTipoPerfume" == *"/"* ]; then
         clear
         echo -e "\nError: el nombre de la TipoPerfume no puede contener '/'...\n"
         crear=false
