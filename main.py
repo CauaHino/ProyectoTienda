@@ -177,9 +177,9 @@ def verTienda():
     seleccion = 0
     while True:
         terminal.clear()
-        terminal.addstr(0, 0, "===== PERFUMERIA PACO =====")
+        terminal.addstr(0, 0, f"===== PERFUMERIA PACO: {ruta.name} =====")
         elementos = [ruta.parent] + sorted(ruta.iterdir())
-        
+
         for i, elemento in enumerate(elementos):
             nombre = elemento.name
             if elemento == ruta.parent:
