@@ -51,7 +51,7 @@ if [[ $opcion == 'e' || $opcion == 'E' ]]; then
 
 elif [[ $opcion == 'b' || $opcion == 'B' ]]; then
     read -e -p "¿Estás seguro que deseas borrar el producto con codigo $codigo? (s/n): " confirmar
-    if [[ $confirmar -eq 's' || $confirmar -eq 'S' ]]; then
+    if [[ $confirmar == 's' || $confirmar == 'S' ]]; then
         rm "$ruta"
         echo "Producto con codigo $codigo borrado."
         exit 1
