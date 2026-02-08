@@ -162,7 +162,7 @@ def buscar():
         elif tecla == ord('\n'):
             if seleccion == 0:
                 curses.endwin()
-                subprocess.run( ["bash", "scripts/bash/verJson.sh"] )
+                subprocess.run( ["bash", "scripts/bash/codigoJson.sh"] )
             elif seleccion == 1:
                 curses.endwin()
                 subprocess.run( ["bash", "scripts/bash/filtrarJson.sh"] )
@@ -173,7 +173,21 @@ def buscar():
     terminal.getch()
 
 def verTienda():
-    pass
+    ruta = Path("/tiendas/PerfumeriaPaco")
+    seleccion = 0
+    while True:
+        terminal.clear()
+        terminal.addstr(0, 0, "===== PERFUMERIA PACO =====")
+        elementos = [ruta.parent] + sorted(ruta.iterdir())
+        
+        for i, elemento in enumerate(elementos):
+            nombre = elemento.name
+            if elemento == ruta.parent:
+                nombre = "Volver"
+            if seleccion == i:
+                terminal.addstr(i + 2, 0, nombre, curses.A_REVERSE)
+            else:
+                terminal.addstr(i + 2, 0, nombre)
 
 def salir():
     opciones = ["Si", "No"]
