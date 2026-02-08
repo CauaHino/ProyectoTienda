@@ -4,7 +4,7 @@ clear
 
 read -p "Indica un filtro: " filtro
 
-python3 ../Python/busqueda.py $filtro
+python3 ./scripts/Python/busqueda.py $filtro
 
 if [[ -s ./nombres_busqueda.txt ]]; then
     cat ./nombres_busqueda.txt
@@ -44,7 +44,7 @@ if [[ "$numero" =~ ^[0-9]+$ ]]; then
     read -e -p "Mililitros: " -i "$ml" ml
     read -e -p "Descripción: " -i "$descripcion" descripcion
 
-    python3 ../Python/guardaDatos.py "$contenido" "$nombre" "$precio" "$stock" "$ml" "$descripcion"
+    python3 ./scripts/Python/guardaDatos.py "$contenido" "$nombre" "$precio" "$stock" "$ml" "$descripcion"
 
     echo "Nombre: $nombre"
     echo "Precio: $precio"
