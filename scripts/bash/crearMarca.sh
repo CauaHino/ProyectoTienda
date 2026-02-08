@@ -4,7 +4,7 @@ clear
 path=$1
 
 if [ -z "$path" ] || [ ! -d "$path" ]; then
-    echo "Error: Ruta de marca no válida."
+    echo "Error: Ruta de marca no valida."
     exit 1
 fi
 
@@ -14,9 +14,9 @@ while true; do
     crear=true
     echo "========= CREAR MARCA ========="
     echo -e "Tipo de Perfume => $(basename "$path")"
-    read -p "Indica el nombre de la nombre marca (escribe s para salir) => " nombreMarca
+    read -p "Indica el nombre de la marca (escribe s para salir) => " nombreMarca
 
-    if [  "$path/$nombreMarca" == "s" ]; then
+    if [  "$nombreMarca" == "s" ]; then
         clear
         echo "Has luego..."
         sleep 3
@@ -25,7 +25,7 @@ while true; do
 
     if [ -z "$nombreMarca" ]; then
         clear
-        echo -e "\nError: El nombre de la marca no puede estar vacío."
+        echo -e "\nError: El nombre de la marca no puede estar vacio."
         sleep 5
         crear=false
         continue
@@ -42,7 +42,7 @@ while true; do
 
     if [[ "$nombreMarca" == *"/"* ]]; then
         clear
-        echo -e "\nError: El nombre no puede contener el carácter '/'."
+        echo -e "\nError: El nombre no puede contener el caracter '/'."
         sleep 5
         crear=false
         continue
@@ -50,7 +50,7 @@ while true; do
 
     if [[ ! "$nombreMarca" =~ ^[a-zA-Z0-9_-]+$ ]]; then
         clear
-        echo -e "\nError: Solo se permiten letras, números, '-' o '_'."
+        echo -e "\nError: Solo se permiten letras, numeros, '-' o '_'."
         sleep 5
         crear=false
         continue
@@ -59,7 +59,7 @@ while true; do
 
     if [ -d "$path/$nombreMarca" ]; then
         clear
-        echo -e "\nError: Ya existe esta marca ($nombreMarca) en esta categoria de perfumes.\n"
+        echo -e "\nError: Ya existe esta marca ($nombreMarca) en estos tipos de perfumes.\n"
     fi
 
     if [ $crear = true ]; then
@@ -89,7 +89,7 @@ while true; do
             done
         else
             clear
-            echo -e "\nError: No se ha podido crear la carpeta $nombreMarca en $path\n"
+            echo -e "\nError: No se ha podido crear la marca $nombreMarca en $path\n"
             sleep 5
         fi
     fi
