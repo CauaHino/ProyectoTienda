@@ -1,2 +1,1 @@
-/tiendas/PerfumeriaPaco/Parfum/JeanPaulGaultier/101.json
 /tiendas/PerfumeriaPaco/Parfum/JeanPaulGaultier/234.json

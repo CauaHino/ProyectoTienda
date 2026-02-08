@@ -18,7 +18,7 @@ def buscar():
 		if filtro in descripcion.lower():
 			rutas.write(str(archivo)+"\n") # almacenar ruta en txt 
 			nombres.write(f"{i}. {datos.get('nombre')}\n")# almacenar nombre en txt con numeracion 
-		i+=1
+			i += 1
 
 	# Cerrar archivos por seguridad		
 	nombres.close()
