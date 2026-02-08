@@ -31,7 +31,7 @@ while true; do
 
     if [ -z "$nombreTipoPerfume" ]; then
         clear
-        echo -e "\nError: El nombre de la categoría no puede estar vacío.\n"
+        echo -e "\nError: El nombre de la categoria no puede estar vacio.\n"
         crear=false
         sleep 5
         continue
@@ -39,7 +39,7 @@ while true; do
 
     if [[ ! "$nombreTipoPerfume" =~ ^[a-zA-Z0-9]+$ ]]; then
         clear
-        echo -e "\nError: El nombre contiene caracteres no válidos.\nSolo se permiten letras y números (sin espacios ni símbolos).\n"
+        echo -e "\nError: El nombre contiene caracteres no validos.\nSolo se permiten letras y numeros (sin espacios ni símbolos).\n"
         crear=false
         sleep 5
         continue
@@ -80,7 +80,7 @@ while true; do
             done
         else
             clear
-            echo -e "\nError: No se ha podido crear la carpeta $nombreTipoPerfume en $path\n"
+            echo -e "\nError: No se ha podido crear el tipo de perfume $nombreTipoPerfume en $path\n"
             sleep 5
         fi
     fi
