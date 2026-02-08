@@ -12,7 +12,6 @@ while true; do
     clear
     crear=true
     echo "========= CREAR TIPO DE PERFUME ========="
-    echo ""
     read -p "Indica el nombre para la nueva categoria de perfume (escribe s para salir) > " nombreTipoPerfume
 
     if [  "$nombreTipoPerfume" == "s" ]; then
@@ -64,7 +63,7 @@ while true; do
 
             while true; do
                 clear
-                read -p "Desea seguir creando marcas? (pulse Enter para continuar o 's' para salir): " continuar
+                read -p "Desea seguir creando tipos de perfumes? (pulse Enter para continuar o 's' para salir): " continuar
 
                 if [[ -z $continuar ]]; then
                     break

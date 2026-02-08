@@ -12,9 +12,7 @@ while true; do
     clear
     crear=true
     echo "========= CREAR MARCA ========="
-    echo ""
-    echo "Tipo de Perfume => $(basename "$path")"
-    echo ""
+    echo -e "Tipo de Perfume => $(basename "$path")"
     read -p "Indica el nombre de la nombre marca (escribe s para salir) => " nombreMarca
 
     if [  "$path/$nombreMarca" == "s" ]; then
