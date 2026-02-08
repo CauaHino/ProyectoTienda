@@ -33,33 +33,19 @@ def crear(rutaTienda):
         elif tecla == ord('\n'):
             if seleccion == 0:
                 curses.endwin()
-                terminal.clear()
-                terminal.refresh()
                 
                 subprocess.run( ["bash", "./scripts/bash/crearTipoPerfume.sh", str(rutaTienda)] )
-
-                terminal.clear()
             elif seleccion == 1:
                 curses.endwin()
-                terminal.clear()
-                terminal.refresh()
-                curses.cbreak()
                 
                 rutaCompletaM = rutaTipoPerfume(rutaTienda, "marca")
                 
-                subprocess.run( ["bash", "scripts/bash/crearMarca.sh", str(rutaCompletaM)] )
-                
-                terminal.clear()
+                subprocess.run( ["bash", "./scripts/bash/crearMarca.sh", str(rutaCompletaM)] )
             elif seleccion == 2:
                 curses.endwin()
-                terminal.clear()
-                terminal.refresh()
                 
                 rutaCompletaP = rutaMarca(rutaTipoPerfume(rutaTienda, "producto"))
-                subprocess.run( ["bash", "scripts/bash/crearProducto.sh", str(rutaCompletaP)] )
-                
-
-                terminal.clear()
+                subprocess.run( ["bash", "./scripts/bash/crearProducto.sh", str(rutaCompletaP)] )
             elif seleccion == 3:
                 bucleActivo = False
  

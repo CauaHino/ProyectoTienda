@@ -8,6 +8,7 @@ if [ -z "$path" ] || [ ! -d "$path" ]; then
     exit 1
 fi
 
+
 while true; do
     clear
     crear=true
