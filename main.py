@@ -33,19 +33,21 @@ def crear(rutaTienda):
         elif tecla == ord('\n'):
             if seleccion == 0:
                 curses.endwin()
+                terminal.clear()
                 
-                subprocess.run( ["bash", "./scripts/bash/crearTipoPerfume.sh", str(rutaTienda)] )
+                subprocess.run( ["bash", "scripts/bash/crearTipoPerfume.sh", str(rutaTienda)] )
             elif seleccion == 1:
                 curses.endwin()
+                terminal.clear()
                 
                 rutaCompletaM = rutaTipoPerfume(rutaTienda, "marca")
-                
-                subprocess.run( ["bash", "./scripts/bash/crearMarca.sh", str(rutaCompletaM)] )
+                subprocess.run( ["bash", "scripts/bash/crearMarca.sh", str(rutaCompletaM)] )
             elif seleccion == 2:
                 curses.endwin()
+                terminal.clear()
                 
                 rutaCompletaP = rutaMarca(rutaTipoPerfume(rutaTienda, "producto"))
-                subprocess.run( ["bash", "./scripts/bash/crearProducto.sh", str(rutaCompletaP)] )
+                subprocess.run( ["bash", "scripts/bash/crearProducto.sh", str(rutaCompletaP)] )
             elif seleccion == 3:
                 bucleActivo = False
  
@@ -82,8 +84,12 @@ def rutaTipoPerfume(rutaTienda, tipo):
         elif tecla == curses.KEY_UP and seleccion > 0:
             seleccion -= 1
         elif tecla == ord('\n') and opciones:
+            terminal.clear()
+            curses.endwin()
             return opciones[seleccion] 
         elif tecla == ord('s'):
+            terminal.clear()
+            curses.endwin()
             return None
 
 def rutaMarca(rutaTienda):
@@ -116,8 +122,12 @@ def rutaMarca(rutaTienda):
         elif tecla == curses.KEY_UP and seleccion > 0:
             seleccion -= 1
         elif tecla == ord('\n') and opciones:
+            terminal.clear()
+            curses.endwin()
             return opciones[seleccion] 
         elif tecla == ord('s'):
+            terminal.clear()
+            curses.endwin()
             return None
 
 def buscar():
@@ -155,25 +165,23 @@ def buscar():
             elif seleccion == 2:
                 bucleActivo = False
         
-    # Una pausa
-    terminal.getch()
+# Vamos a crear ver tienda en un archivo a parte y lo importamos aca para que no se haga tan largo es archivo
+# def verTienda():
+#     ruta = Path("/tiendas/PerfumeriaPaco")
+#     seleccion = 0
+#     while True:
+#         terminal.clear()
+#         terminal.addstr(0, 0, f"===== PERFUMERIA PACO: {ruta.name} =====")
+#         elementos = [ruta.parent] + sorted(ruta.iterdir())
 
-def verTienda():
-    ruta = Path("/tiendas/PerfumeriaPaco")
-    seleccion = 0
-    while True:
-        terminal.clear()
-        terminal.addstr(0, 0, f"===== PERFUMERIA PACO: {ruta.name} =====")
-        elementos = [ruta.parent] + sorted(ruta.iterdir())
-
-        for i, elemento in enumerate(elementos):
-            nombre = elemento.name
-            if elemento == ruta.parent:
-                nombre = "Volver"
-            if seleccion == i:
-                terminal.addstr(i + 2, 0, nombre, curses.A_REVERSE)
-            else:
-                terminal.addstr(i + 2, 0, nombre)
+#         for i, elemento in enumerate(elementos):
+#             nombre = elemento.name
+#             if elemento == ruta.parent:
+#                 nombre = "Volver"
+#             if seleccion == i:
+#                 terminal.addstr(i + 2, 0, nombre, curses.A_REVERSE)
+#             else:
+#                 terminal.addstr(i + 2, 0, nombre)
 
 def salir():
     opciones = ["Si", "No"]
@@ -240,7 +248,8 @@ def menu(terminal):
             elif seleccion == 1:
                 buscar()
             elif seleccion == 2:
-                verTienda()
+                # verTienda()
+                pass
             elif seleccion == 3:
                 bucleActivo = salir()
                              

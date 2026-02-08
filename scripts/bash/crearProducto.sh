@@ -18,7 +18,7 @@ while true; do
 
     if [  "$codigoPerfume" == "s" ]; then
         clear
-        echo "Has luego..."
+        echo "Hasta luego..."
         sleep 3
         exit 0
     fi
