@@ -10,6 +10,7 @@ if [[ -s ./nombres_busqueda.txt ]]; then
     cat ./nombres_busqueda.txt
 else
     echo "No se encontraron productos con ese filtro."
+    sleep 3
     exit 0
 fi
 
