@@ -47,7 +47,7 @@ if [[ $opcion == 'e' || $opcion == 'E' ]]; then
         echo "Mililitros: $ml"
         echo "Descripción: $descripcion"
 
-        python3 ./scripts/Python/guardaDatos.py "$ruta" "$nombre" "$precio" "$stock" "$ml" "$descripcion"
+        python3 ../Python/guardaDatos.py "$ruta" "$nombre" "$precio" "$stock" "$ml" "$descripcion"
 
 elif [[ $opcion == 'b' || $opcion == 'B' ]]; then
     read -e -p "¿Estás seguro que deseas borrar el producto con codigo $codigo? (s/n): " confirmar
