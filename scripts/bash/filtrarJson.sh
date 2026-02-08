@@ -44,13 +44,7 @@ if [[ "$numero" =~ ^[0-9]+$ ]]; then
     read -e -p "Mililitros: " -i "$ml" ml
     read -e -p "Descripción: " -i "$descripcion" descripcion
 
-    jq -n \
-      --arg nom "$nombre" \
-      --arg pre "$precio" \
-      --arg sto "$stock" \
-      --arg ml "$ml" \
-      --arg des "$descripcion" \
-      '{nombre: $nom, precio: $pre, stock: $sto, ml: $ml, descripcion: $des}' > "$contenido"
+    python3 ./scripts/Python/guardaDatos.py "$contenido" "$nombre" "$precio" "$stock" "$ml" "$descripcion"
 
     echo "Nombre: $nombre"
     echo "Precio: $precio"
