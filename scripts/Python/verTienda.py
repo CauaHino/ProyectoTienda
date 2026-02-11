@@ -7,21 +7,23 @@ def listarTienda(terminal):
     while True:
         terminal.clear()
         terminal.addstr(0, 0, f"===== PERFUMERIA PACO: {ruta.name} =====")
-        elementos = [ruta.parent] + sorted(ruta.iterdir())
+        opciones = sorted([directorios for directorios in ruta.iterdir() if directorios.is_dir()])
+        opciones.append("Volver")
 
-        for i, elemento in enumerate(elementos):
-            nombre = elemento.name
-            if elemento == ruta.parent:
-                nombre = "Volver"
-            if seleccion == i:
-                terminal.addstr(i + 2, 0, nombre, curses.A_REVERSE)
+        for i, opcion in enumerate(opciones):
+            if(opcion != "Volver"):
+                nombre = opcion.name
             else:
-                terminal.addstr(i + 2, 0, nombre)
+                nombre = opcion
+            if seleccion == i:
+                terminal.addstr(i + 2, 0, f"> {nombre}", curses.A_REVERSE)
+            else:
+                terminal.addstr(i + 2, 0, f"{nombre}")
         
         tecla = terminal.getch()
 
 
-        if tecla == curses.KEY_DOWN and seleccion < len(elementos) - 1:
+        if tecla == curses.KEY_DOWN and seleccion < len(opciones) - 1:
             seleccion += 1
         elif tecla == curses.KEY_UP and seleccion > 0:
             seleccion -= 1
