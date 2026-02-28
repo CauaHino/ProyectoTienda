@@ -1,0 +1,85 @@
+[
+  {
+    "TipodePerfume": "EauDeCologne",
+    "marcas": [
+      { "nombre": "4711", "productos": [] },
+      { "nombre": "AcquadiParma", "productos": [] },
+      { "nombre": "AlvarezGomez", "productos": [] },
+      { "nombre": "Guerlain", "productos": [] },
+      { "nombre": "RogerAndGallet", "productos": [] }
+    ]
+  },
+  {
+    "TipodePerfume": "EauDeParfum",
+    "marcas": [
+      {
+        "nombre": "Chanel",
+        "productos": [
+          {
+            "producto": {
+              "nombre": "Bleu de Chanel",
+              "precio": "110.00",
+              "stock": "8",
+              "ml": "50",
+              "descripcion": "Un elogio a la libertad masculina que se expresa en un aromático amaderado de estela cautivadora."
+            }
+          }
+        ]
+      },
+      { "nombre": "Dior", "productos": [] },
+      { "nombre": "GiorgioArmani", "productos": [] },
+      { "nombre": "Lancome", "productos": [] },
+      { "nombre": "YvesSaintLaurent", "productos": [] }
+    ]
+  },
+  {
+    "TipodePerfume": "EauDeToilette",
+    "marcas": [
+      { "nombre": "CalvinKlein", "productos": [] },
+      { "nombre": "DolceAndGabbana", "productos": [] },
+      { "nombre": "HugoBoss", "productos": [] },
+      { "nombre": "Lacoste", "productos": [] },
+      {
+        "nombre": "PacoRabanne",
+        "productos": [
+          {
+            "producto": {
+              "nombre": "1 Million",
+              "precio": "75.50",
+              "stock": "20",
+              "ml": "100",
+              "descripcion": "Una fragancia de cuero solar e irresistible que combina notas de mandarina de sangre y canela."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "TipodePerfume": "EauDeToiletteIntense",
+    "marcas": []
+  },
+  {
+    "TipodePerfume": "Parfum",
+    "marcas": [
+      { "nombre": "Creed", "productos": [] },
+      {
+        "nombre": "JeanPaulGaultier",
+        "productos": [
+          {
+            "producto": {
+              "nombre": "Scandal Pour Homme Le Parfum",
+              "precio": "84.99",
+              "stock": "15",
+              "ml": "100",
+              "descripcion": "Una fragancia ambarina amaderada con notas de geranio, sándalo y haba tonka. Un perfume intenso con corona magnética diseñado para el hombre que no teme al escándalo."
+            }
+          }
+        ]
+      },
+      { "nombre": "MaisonFrancisKurkdjian", "productos": [] },
+      { "nombre": "Prada", "productos": [] },
+      { "nombre": "TomFord", "productos": [] }
+    ]
+  }
+]
