@@ -149,12 +149,14 @@ def salir():
             seleccion -= 1
         elif tecla == ord('\n'): 
             if seleccion == 0:
+                subprocess.run( ["bash", "scripts/bash/creacionLogs.sh", str("SESION"), str(f"Fin de programa")] )
+                
                 return False   
             elif seleccion == 1:
                 return True
 
 def menu(terminal):
-    opciones = ["Crear","Buscar", "Ver la tienda", "Salir"]
+    opciones = ["Crear","Buscar", "Ver la tienda", "Instalar", "Salir"]
     seleccion = 0
     bucleActivo = True
     
@@ -190,6 +192,8 @@ def menu(terminal):
             elif seleccion == 1:
                 buscar()
             elif seleccion == 2:
+                subprocess.run( ["bash", "scripts/bash/creacionLogs.sh", str("SESION"), str(f"Usuario esta viendo la tienda")] )
+                
                 verTienda.listarTienda(terminal)
             elif seleccion == 3:
                 bucleActivo = salir()
@@ -212,6 +216,7 @@ if __name__ == '__main__':
     curses.curs_set(0)
 
     try:
+        subprocess.run( ["bash", "scripts/bash/creacionLogs.sh", str("SESION"), str(f"Inicio de programa")] )
         menu(terminal)
     finally:
         # Libera los recursos de la terminal
