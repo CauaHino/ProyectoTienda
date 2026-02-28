@@ -1,5 +1,5 @@
 #!/bin/bash
-
+clear
 ruta=$1
 
 if [[ -f $ruta ]]; then
