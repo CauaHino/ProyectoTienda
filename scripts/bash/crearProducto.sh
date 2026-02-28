@@ -126,7 +126,7 @@ while true; do
             python3 ../Python/guardaDatos.py "$path/$codigoPerfume.json" "$nombre" "$precio" "$stock" "$ml" "$descripcion"
 
             clear
-            echo -e "\nLa archivo json $codigoPerfume.json se ha creado correctamente en $path\n" 
+            echo -e "\nEl archivo json $codigoPerfume.json se ha creado correctamente en $path\n" 
             sleep 4
 
             while true; do
