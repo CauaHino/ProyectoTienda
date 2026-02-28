@@ -1,15 +1,23 @@
 #!/bin/bash
 
+log(){
+    bash "creacionLogs.sh" "$1" "$2"
+}
+
 clear
 
 read -p "Ingrese el codigo del producto: " codigo
 ruta=$(find /tiendas/PerfumeriaPaco/ -name "$codigo.json")
 
 if [[ $ruta = "" ]]; then
-    echo "El producto con codigo $codigo no existe."
+    echo "Error: El producto con codigo $codigo no existe."
+    log "BUSQUEDA - CODIGO" "Error: El producto con codigo $codigo no existe."
+
     exit 1
 else 
     echo "Producto encontrado: $ruta"
+    log "BUSQUEDA - CODIGO" "Producto encontrado: $ruta"
+
 fi
 
 nombre=$(jq -r '.nombre' "$ruta")
@@ -27,7 +35,9 @@ echo "Descripción: $descripcion"
 read -e -p "¿Que deseas hacer? Editar(e), Borrar(b), Volver(v): " opcion
 
 if [[ $opcion =~ [^a-zA-Z0-9] ]]; then
-		echo "La variable no puede tener caracteres especiales"
+		echo "Error: La variable no puede tener caracteres especiales"
+        log "BUSQUEDA - CODIGO" "Error: La variable no puede tener caracteres especiales"
+        
         read -n1 -p "Pulsa una tecla para continuar..."
         exit 1
 fi
@@ -49,11 +59,16 @@ if [[ $opcion == 'e' || $opcion == 'E' ]]; then
 
         python3 ./scripts/Python/guardaDatos.py "$ruta" "$nombre" "$precio" "$stock" "$ml" "$descripcion"
 
+        log "BUSQUEDA - CODIGO" "El producto $codigo.json en $ruta, ha sido modificado"
+
+
 elif [[ $opcion == 'b' || $opcion == 'B' ]]; then
     read -e -p "¿Estás seguro que deseas borrar el producto con codigo $codigo? (s/n): " confirmar
     if [[ $confirmar == 's' || $confirmar == 'S' ]]; then
         rm "$ruta"
         echo "Producto con codigo $codigo borrado."
+        log "BUSQUEDA - CODIGO" "El producto $codigo.json en $ruta, ha sido borrado"
+        
         exit 1
     else
         echo "Operación de borrado cancelada."

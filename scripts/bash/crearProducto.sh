@@ -1,10 +1,16 @@
 #!/bin/bash
 
+log(){
+    bash "creacionLogs.sh" "$1" "$2"
+}
+
 clear
 path=$1
 
 if [ -z "$path" ] || [ ! -d "$path" ]; then
-    echo "Error: Ruta de categoría no válida."
+    echo "Error: Ruta de categoria no valida."
+    log "CREACION - PRODUCTO" "Error: Ruta de categoria no valida."
+
     exit 1
 fi
 
@@ -19,13 +25,17 @@ while true; do
     if [  "$codigoPerfume" == "s" ]; then
         clear
         echo "Hasta luego..."
+        log "CREACION - PRODUCTO" "Usuario no creo ningun producto."
+
         sleep 3
         exit 0
     fi
 
     if [ -z "$codigoPerfume" ]; then
         clear
-        echo -e "\nError: El nombre de la marca no puede estar vacío."
+        echo -e "\nError: El nombre de la marca no puede estar vacio."
+        log "CREACION - PRODUCTO" "Error: El nombre de la marca no puede estar vacio."
+
         sleep 5
         crear=false
         continue
@@ -35,6 +45,8 @@ while true; do
     if [[ "$codigoPerfume" == .* ]]; then
         clear
         echo -e "\nError: El nombre no puede empezar por punto (.)."
+        log "CREACION - PRODUCTO" "Error: El nombre no puede empezar por punto (.)."
+
         sleep 5
         crear=false
         continue
@@ -43,6 +55,8 @@ while true; do
     if [[ "$codigoPerfume" == *"/"* ]]; then
         clear
         echo -e "\nError: El nombre no puede contener el caracter '/'."
+        log "CREACION - PRODUCTO" "Error: El nombre no puede contener el caracter '/'."
+
         sleep 5
         crear=false
         continue
@@ -51,6 +65,8 @@ while true; do
     if [[ ! "$codigoPerfume" =~ ^[a-zA-Z0-9]+$ ]]; then
         clear
         echo -e "\nError: Solo se permiten letras y numeros."
+        log "CREACION - PRODUCTO" "Error: Solo se permiten letras y numeros."
+
         sleep 5
         crear=false
         continue
@@ -61,6 +77,8 @@ while true; do
     if [ -n $perfumeEncontrado ]; then
         clear
         echo -e "\nError: Ya existe un perfume ($codigoPerfume) con este codigo en la tienda.\n"
+        log "CREACION - PRODUCTO" "Error: Ya existe un perfume ($codigoPerfume) con este codigo en la tienda."
+        
         sleep 5
         crear=false
         continue
@@ -71,6 +89,7 @@ while true; do
     read -p "La entrada es correcta? [S/N]: " confirmacion
 
     if [[ $confirmacion == "N" || $confirmacion == "n" ]]; then
+        log "CREACION - PRODUCTO" "Error: El usuario no continuo con la creacion del producto"
         crear=false
     fi
 
@@ -126,7 +145,9 @@ while true; do
             python3 ../Python/guardaDatos.py "$path/$codigoPerfume.json" "$nombre" "$precio" "$stock" "$ml" "$descripcion"
 
             clear
-            echo -e "\nEl archivo json $codigoPerfume.json se ha creado correctamente en $path\n" 
+            echo -e "\nEl archivo json $codigoPerfume.json se ha creado correctamente en $path\n"
+            log "CREACION - PRODUCTO" "El archivo json $codigoPerfume.json se ha creado correctamente en $path"
+
             sleep 4
 
             while true; do
@@ -134,10 +155,13 @@ while true; do
                 read -p "Desea seguir creando perfumes? (pulse Enter para continuar o 's' para salir): " continuar
 
                 if [[ -z $continuar ]]; then
+                    log "CREACION - PRODUCTO" "Usuario va a crear otro producto"
                     break
                 elif [[ $continuar == "s" || $continuar == "S" ]]; then
                     clear
                     echo "Hasta luego..."
+                    log "CREACION - PRODUCTO" "Usuario termino de crear el producto"
+
                     sleep 3
                     exit 0
                 else
@@ -149,6 +173,8 @@ while true; do
         else
             clear
             echo -e "\nError: No se ha podido crear el perfume dentro de la tienda $codigoPerfume en $path\n"
+            log "CREACION - PRODUCTO" "Error: No se ha podido crear el perfume dentro de la tienda $codigoPerfume en $path"
+            
             sleep 5
         fi
     fi

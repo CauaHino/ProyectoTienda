@@ -1,5 +1,8 @@
 #!/bin/bash
 
+log(){
+    bash "creacionLogs.sh" "$1" "$2"
+}
 clear
 
 read -p "Indica un filtro: " filtro
@@ -10,7 +13,9 @@ if [[ -s ./nombres_busqueda.txt ]]; then
     cat ./nombres_busqueda.txt
 else
     clear
-    echo "No se encontraron productos con ese filtro."
+    echo "Error: No se encontraron productos con ese filtro."
+    log "BUSQUEDA - REFERENCIA" "Error: No se encontraron productos con ese filtro."
+    
     sleep 3
     exit 0
 fi
@@ -20,6 +25,8 @@ read -p "Indica el numero de producto a editar (s para salir): " numero
 if [[ "$numero" == "s" ]]; then
     clear
     echo "Hasta Luego"
+    log "BUSQUEDA - REFERENCIA" "El usuario se retiro de la busqueda con filtro."
+
     sleep 2
     exit 0
 fi
@@ -34,6 +41,8 @@ if [[ "$numero" =~ ^[0-9]+$ ]]; then
     if [ -z "$contenido" ] || [ ! -f "$contenido" ]; then
         clear
         echo "Error: El número seleccionado no existe."
+        log "BUSQUEDA - REFERENCIA" "Error: El número seleccionado no existe."
+
         exit 1
     fi
     
@@ -50,6 +59,8 @@ if [[ "$numero" =~ ^[0-9]+$ ]]; then
     read -e -p "Descripción: " -i "$descripcion" descripcion
 
     python3 ./scripts/Python/guardaDatos.py "$contenido" "$nombre" "$precio" "$stock" "$ml" "$descripcion"
+
+    log "BUSQUEDA - REFERENCIA" "Se ha modificado el $contenido"
 
     echo "Nombre: $nombre"
     echo "Precio: $precio"
