@@ -1,4 +1,5 @@
 import json
+import subprocess
 import sys
 from time import sleep
 
@@ -24,8 +25,10 @@ try:
         json.dump(datos_nuevos, archivo, indent=4)
 except FileNotFoundError as e:
     print(f"Error el archivo no ha podido ser encontrado: {e}")
+    subprocess.run( ["bash", "scripts/bash/creacionLogs.sh", str("GUARDAR"), str(f"Error el archivo no ha podido ser encontrado: {e}")] )
     sleep(4)
 except Exception as e:
     print(f"Error al guardar los datos: {e}")
+    subprocess.run( ["bash", "scripts/bash/creacionLogs.sh", str("GUARDAR"), str(f"Error al guardar los datos: {e}")] )
     sleep(4)
 
