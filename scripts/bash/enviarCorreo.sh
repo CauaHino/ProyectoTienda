@@ -29,13 +29,13 @@ else
     curl -s -X POST "http://10.0.0.78:5678/webhook-test/correo" \
     -H "Content-Type: application/json" \
     -d "{
-        "email": "$correo",
-        "codigo": "$codigo",
-        "nombre": "$nombre",
-        "precio": "$precio",
-        "stock": "$stock",
-        "ml" : "$ml",
-        "descripcion": "$descripcion"
+        \"email\": \"$correo\",
+        \"codigo\": \"$codigo\",
+        \"nombre\": \"$nombre\",
+        \"precio\": \"$precio\",
+        \"stock\": \"$stock\",
+        \"ml\" : \"$ml\",
+        \"descripcion\": \"$descripcion\"
     }"
 
     echo -e "\n¡Datos enviados correctamente!"
