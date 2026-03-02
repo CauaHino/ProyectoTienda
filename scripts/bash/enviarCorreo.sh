@@ -19,10 +19,10 @@ if [[ -z "$ruta" ]]; then
     exit 1
 else
     nombre=$(jq -r '.nombre' "$ruta")
-    precio=$(jq -r '.precio' "$ruta")
+    precio=$(jq -r '.precio'  "$ruta")
     stock=$(jq -r '.stock' "$ruta")
     ml=$(jq -r '.ml' "$ruta")
-    descripcion=$(jq -r '.descripcion' "$ruta")
+   descripcion=$(jq -r '.descripcion' "$ruta")
 
     echo "Enviando datos del producto: $nombre..."
 
