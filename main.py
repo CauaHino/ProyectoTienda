@@ -126,6 +126,10 @@ def buscar():
             elif seleccion == 2:
                 bucleActivo = False
 
+def publicidad():
+    subprocess.run( ["bash", "scripts/bash/enviarCorreo.sh"] )
+
+
 def salir():
     opciones = ["Si", "No"]
     seleccion = 0
@@ -156,7 +160,7 @@ def salir():
                 return True
 
 def menu(terminal):
-    opciones = ["Crear","Buscar", "Ver la tienda", "Instalar", "Salir"]
+    opciones = ["Crear","Buscar", "Ver la tienda", "Instalar", "Publicidad","Salir"]
     seleccion = 0
     bucleActivo = True
     
@@ -196,6 +200,10 @@ def menu(terminal):
                 
                 verTienda.listarTienda(terminal)
             elif seleccion == 3:
+                pass
+            elif seleccion == 4:
+                pass
+            elif seleccion == 5:
                 bucleActivo = salir()
                              
 if __name__ == '__main__':
