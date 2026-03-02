@@ -157,7 +157,7 @@ def salir():
                 return True
 
 def menu(terminal):
-    opciones = ["Crear","Buscar", "Ver la tienda", "Publicidad","Instalar","Salir"]
+    opciones = ["Crear","Buscar", "Ver la tienda", "Publicidad", "Instalar", "Salir"]
     seleccion = 0
     bucleActivo = True
     
@@ -197,9 +197,13 @@ def menu(terminal):
                 
                 verTienda.listarTienda(terminal)
             elif seleccion == 3:
+                terminal.clear()
+                curses.endwin()
                 subprocess.run( ["bash", "scripts/bash/enviarCorreo.sh"] )
             elif seleccion == 4:
-                pass
+                terminal.clear()
+                curses.endwin()
+                subprocess.run( ["bash", "./instalar.sh"] )
             elif seleccion == 5:
                 bucleActivo = salir()
                              

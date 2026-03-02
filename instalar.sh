@@ -7,17 +7,19 @@ log(){
 clear
 
 ruta="/tiendas"
-nombreTienda= "PerfumeriaPaco"
+nombreTienda="PerfumeriaPaco"
+codigoProducto=100
 
 if [ -d "$ruta/g2" ]; then
     echo "Carpeta g2 encontrada, renombrando a $nombreTienda"
     mv "$ruta/g2" "$ruta/$nombreTienda"
-
+    sleep 4
     log "INSTALAR" "Carpeta g2 encontrada, renombrando a $nombreTienda"
 
 elif [ ! -d "$ruta/$nombreTienda" ]; then
     echo "Error: No se ha podido encontrar $nombreTienda en $ruta"
     log "INSTALAR" "Error: No se ha podido encontrar $nombreTienda en $ruta"
+    sleep 4
 
     exit 1
 
@@ -29,14 +31,14 @@ sleep 2
 cat "EstructuraTienda.json" | jq -c '.[]' | while read -r categoria; do
 
     tipo=$(echo "$categoria" | jq -r '.TipodePerfume')
-    mkdir -p "$ruta/$tipo"
+    mkdir -p "$ruta/$nombreTienda/$tipo"
 
     log "INSTALADOR" "Creada categoria: $tipo"
 
     echo "$categoria" | jq -c '.marcas[]' | while read -r marca; do
     
         nombre_marca=$(echo "$marca" | jq -r '.nombre')
-        mkdir -p "$ruta/$tipo/$nombre_marca"
+        mkdir -p "$ruta/$nombreTienda/$tipo/$nombre_marca"
 
         log "INSTALADOR" "Creada marca: $nombre_marca en $tipo"
         
@@ -48,13 +50,17 @@ cat "EstructuraTienda.json" | jq -c '.[]' | while read -r categoria; do
             ml=$(echo "$producto" | jq -r '.producto.ml')
             descripcion=$(echo "$producto" | jq -r '.producto.descripcion')
 
-            rutaJson="$ruta/$tipo/$nombre_marca/$nombre.json"
-            
+            rutaJson="$ruta/$nombreTienda/$tipo/$nombre_marca/$codigoProducto.json"
+
+            touch $rutaJson
+            chmod 777 $rutaJson
+
             python3 "scripts/Python/guardaDatos.py" "$rutaJson" "$nombre" "$precio" "$stock" "$ml" "$descripcion"
             
             log "INSTALAR" "Producto creado: $nombre en $nombre_marca"
+            codigoProducto=$($codigoProducto + 1)
         done
     done
 done
 
-loggear "SESIÓN" "Fin del programa"
+log "INSTALAR" "Fin de la instalacion"

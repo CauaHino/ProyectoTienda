@@ -5,4 +5,4 @@ descripcion=$2
 
 fecha=$(date +"%H:%M-%d/%m/%y")
 
-echo "$fecha | $tipo | $descripcion" >> "../../programan.log"
+echo "$fecha | $tipo | $descripcion" > "../../programa.log"
