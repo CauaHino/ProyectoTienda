@@ -127,6 +127,7 @@ def buscar():
                 bucleActivo = False
 
 def publicidad():
+    curses.endwin()
     subprocess.run( ["bash", "scripts/bash/enviarCorreo.sh"] )
 
 
