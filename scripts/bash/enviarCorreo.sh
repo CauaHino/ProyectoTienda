@@ -26,7 +26,7 @@ else
 
     echo "Enviando datos del producto: $nombre..."
 
-    curl -s -X POST "http://10.0.0.78:5678/webhook-test/correo" \
+    curl -s -X POST "http://10.0.0.78:5678/webhook/correo" \
     -H "Content-Type: application/json" \
     -d "{
         \"email\": \"$correo\",
