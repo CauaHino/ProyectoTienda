@@ -2,11 +2,76 @@
   {
     "TipodePerfume": "EauDeCologne",
     "marcas": [
-      { "nombre": "4711", "productos": [] },
-      { "nombre": "AcquadiParma", "productos": [] },
-      { "nombre": "AlvarezGomez", "productos": [] },
-      { "nombre": "Guerlain", "productos": [] },
-      { "nombre": "RogerAndGallet", "productos": [] }
+      {
+        "nombre": "4711",
+        "productos": [
+          {
+            "producto": {
+              "nombre": "Original Eau de Cologne",
+              "precio": "25.00",
+              "stock": "45",
+              "ml": "200",
+              "descripcion": "La receta original de 1792. Una explosión de aceites cítricos, romero y lavanda que revitaliza los sentidos."
+            }
+          }
+        ]
+      },
+      {
+        "nombre": "AcquadiParma",
+        "productos": [
+          {
+            "producto": {
+              "nombre": "Colonia",
+              "precio": "135.00",
+              "stock": "12",
+              "ml": "100",
+              "descripcion": "El icono del estilo italiano. Una fragancia solar y elegante con cítricos de Sicilia, lavanda y rosa búlgara."
+            }
+          }
+        ]
+      },
+      {
+        "nombre": "AlvarezGomez",
+        "productos": [
+          {
+            "producto": {
+              "nombre": "Agua de Colonia Concentrada",
+              "precio": "18.50",
+              "stock": "60",
+              "ml": "150",
+              "descripcion": "Un clásico español inconfundible con aceites esenciales de limón, tomillo, espliego y eucalipto."
+            }
+          }
+        ]
+      },
+      {
+        "nombre": "Guerlain",
+        "productos": [
+          {
+            "producto": {
+              "nombre": "Eau de Cologne Impériale",
+              "precio": "95.00",
+              "stock": "10",
+              "ml": "100",
+              "descripcion": "Creada en 1853 para la emperatriz Eugenia. Una armonía sutil de limón, bergamota y petitgrain."
+            }
+          }
+        ]
+      },
+      {
+        "nombre": "RogerAndGallet",
+        "productos": [
+          {
+            "producto": {
+              "nombre": "Jean Marie Farina",
+              "precio": "42.00",
+              "stock": "25",
+              "ml": "100",
+              "descripcion": "El equilibrio perfecto entre la frescura cítrica y la elegancia de las plantas aromáticas del Mediterráneo."
+            }
+          }
+        ]
+      }
     ]
   },
   {
@@ -23,22 +88,144 @@
               "ml": "50",
               "descripcion": "Un elogio a la libertad masculina que se expresa en un aromático amaderado de estela cautivadora."
             }
+          },
+          {
+            "producto": {
+              "nombre": "Coco Mademoiselle",
+              "precio": "125.00",
+              "stock": "12",
+              "ml": "50",
+              "descripcion": "La esencia de una mujer libre y audaz. Un oriental femenino con un carácter fuerte y un frescor sorprendente."
+            }
           }
         ]
       },
-      { "nombre": "Dior", "productos": [] },
-      { "nombre": "GiorgioArmani", "productos": [] },
-      { "nombre": "Lancome", "productos": [] },
-      { "nombre": "YvesSaintLaurent", "productos": [] }
+      {
+        "nombre": "Dior",
+        "productos": [
+          {
+            "producto": {
+              "nombre": "Sauvage",
+              "precio": "115.00",
+              "stock": "15",
+              "ml": "100",
+              "descripcion": "Una interpretación altamente concentrada de Sauvage, donde la frescura extrema se ilumina con notas cálidas de ámbar."
+            }
+          }
+        ]
+      },
+      {
+        "nombre": "GiorgioArmani",
+        "productos": [
+          {
+            "producto": {
+              "nombre": "Acqua di Gio Profondo",
+              "precio": "98.50",
+              "stock": "20",
+              "ml": "75",
+              "descripcion": "Una interpretación marina intensa que combina notas de mandarina verde y esencia de pachulí."
+            }
+          }
+        ]
+      },
+      {
+        "nombre": "Lancome",
+        "productos": [
+          {
+            "producto": {
+              "nombre": "La Vie Est Belle",
+              "precio": "105.00",
+              "stock": "18",
+              "ml": "75",
+              "descripcion": "Un ramo floral gourmet que combina la nobleza del Iris con la profundidad del pachulí y la vainilla."
+            }
+          }
+        ]
+      },
+      {
+        "nombre": "YvesSaintLaurent",
+        "productos": [
+          {
+            "producto": {
+              "nombre": "Libre",
+              "precio": "112.00",
+              "stock": "10",
+              "ml": "90",
+              "descripcion": "La libertad de vivir todo con exceso. Tensión entre la sensualidad ardiente del azahar de Marruecos y la frescura de la lavanda de Francia."
+            }
+          }
+        ]
+      }
     ]
   },
   {
     "TipodePerfume": "EauDeToilette",
     "marcas": [
-      { "nombre": "CalvinKlein", "productos": [] },
-      { "nombre": "DolceAndGabbana", "productos": [] },
-      { "nombre": "HugoBoss", "productos": [] },
-      { "nombre": "Lacoste", "productos": [] },
+      {
+        "nombre": "CalvinKlein",
+        "productos": [
+          {
+            "producto": {
+              "nombre": "CK One",
+              "precio": "45.00",
+              "stock": "50",
+              "ml": "100",
+              "descripcion": "Una fragancia universal y fresca con notas de té verde, papaya y bergamota."
+            }
+          },
+          {
+            "producto": {
+              "nombre": "Eternity for Men",
+              "precio": "52.90",
+              "stock": "35",
+              "ml": "100",
+              "descripcion": "Un clásico atemporal con toques de mandarina, lavanda y madera de sándalo."
+            }
+          }
+        ]
+      },
+      {
+        "nombre": "DolceAndGabbana",
+        "productos": [
+          {
+            "producto": {
+              "nombre": "Light Blue Pour Homme",
+              "precio": "68.00",
+              "stock": "15",
+              "ml": "125",
+              "descripcion": "La esencia de la alegría de vivir y la seducción con notas cítricas y de enebro."
+            }
+          }
+        ]
+      },
+      {
+        "nombre": "HugoBoss",
+        "productos": [
+          {
+            "producto": {
+              "nombre": "Boss Bottled",
+              "precio": "72.00",
+              "stock": "25",
+              "ml": "100",
+              "descripcion": "Elegante y contemporánea, con notas de manzana, canela y maderas preciosas."
+            }
+          }
+        ]
+      },
+      {
+        "nombre": "Lacoste",
+        "productos": [
+          {
+            "producto": {
+              "nombre": "L.12.12 Blanc",
+              "precio": "58.50",
+              "stock": "12",
+              "ml": "100",
+              "descripcion": "Una fragancia pura y refrescante que evoca la sensación de un polo blanco clásico."
+            }
+          }
+        ]
+      },
       {
         "nombre": "PacoRabanne",
         "productos": [
@@ -50,6 +237,15 @@
               "ml": "100",
               "descripcion": "Una fragancia de cuero solar e irresistible que combina notas de mandarina de sangre y canela."
             }
+          },
+          {
+            "producto": {
+              "nombre": "Invictus",
+              "precio": "78.00",
+              "stock": "18",
+              "ml": "100",
+              "descripcion": "El aroma de la victoria; un choque de frescura marina y madera de guayacán."
+            }
           }
         ]
       }
@@ -57,12 +253,96 @@
   },
   {
     "TipodePerfume": "EauDeToiletteIntense",
-    "marcas": []
+    "marcas": [
+      {
+        "nombre": "IsseyMiyake",
+        "productos": [
+          {
+            "producto": {
+              "nombre": "L'Eau d'Issey pour Homme Intense",
+              "precio": "62.00",
+              "stock": "22",
+              "ml": "75",
+              "descripcion": "Una fragancia luminosa y potente donde el frescor del yuzu se encuentra con el incienso y el papiro."
+            }
+          }
+        ]
+      },
+      {
+        "nombre": "Givenchy",
+        "productos": [
+          {
+            "producto": {
+              "nombre": "Gentleman Intense",
+              "precio": "89.50",
+              "stock": "14",
+              "ml": "100",
+              "descripcion": "Un encuentro adictivo entre el frescor de la albahaca y el lirio azul, envuelto en la calidez del cedro."
+            }
+          }
+        ]
+      },
+      {
+        "nombre": "DolceAndGabbana",
+        "productos": [
+          {
+            "producto": {
+              "nombre": "Light Blue Eau Intense",
+              "precio": "78.00",
+              "stock": "18",
+              "ml": "100",
+              "descripcion": "Una versión más profunda del clásico mediterráneo con un cóctel de cítricos y notas amaderadas de ámbar."
+            }
+          }
+        ]
+      },
+      {
+        "nombre": "Kenzo",
+        "productos": [
+          {
+            "producto": {
+              "nombre": "Kenzo Homme Intense",
+              "precio": "74.00",
+              "stock": "10",
+              "ml": "110",
+              "descripcion": "Inspirada en la frescura de la brisa marina y el calor de la piel bajo el sol, con notas de pimienta rosa y madera de higuera."
+            }
+          }
+        ]
+      },
+      {
+        "nombre": "Azzaro",
+        "productos": [
+          {
+            "producto": {
+              "nombre": "Wanted Intense",
+              "precio": "82.00",
+              "stock": "15",
+              "ml": "100",
+              "descripcion": "Un desafío a la gravedad. Mezcla vibrante de cardamomo, caramelo y maderas preciosas para una estela inolvidable."
+            }
+          }
+        ]
+      }
+    ]
   },
   {
     "TipodePerfume": "Parfum",
     "marcas": [
-      { "nombre": "Creed", "productos": [] },
+      {
+        "nombre": "Creed",
+        "productos": [
+          {
+            "producto": {
+              "nombre": "Aventus",
+              "precio": "320.00",
+              "stock": "5",
+              "ml": "100",
+              "descripcion": "Una fragancia icónica y sofisticada que equilibra notas de piña real, abedul seco y almizcle. El epítome del éxito y el poder."
+            }
+          }
+        ]
+      },
       {
         "nombre": "JeanPaulGaultier",
         "productos": [
@@ -74,12 +354,60 @@
               "ml": "100",
               "descripcion": "Una fragancia ambarina amaderada con notas de geranio, sándalo y haba tonka. Un perfume intenso con corona magnética diseñado para el hombre que no teme al escándalo."
             }
+          },
+          {
+            "producto": {
+              "nombre": "Le Male Elixir",
+              "precio": "92.00",
+              "stock": "10",
+              "ml": "125",
+              "descripcion": "Un perfume de una intensidad ardiente. El rastro amaderado oriental de lavanda, benjuí y vainilla que enciende los sentidos."
+            }
           }
         ]
       },
-      { "nombre": "MaisonFrancisKurkdjian", "productos": [] },
-      { "nombre": "Prada", "productos": [] },
-      { "nombre": "TomFord", "productos": [] }
+      {
+        "nombre": "MaisonFrancisKurkdjian",
+        "productos": [
+          {
+            "producto": {
+              "nombre": "Baccarat Rouge 540 Extrait de Parfum",
+              "precio": "395.00",
+              "stock": "3",
+              "ml": "70",
+              "descripcion": "Una obra maestra olfativa. La alquimia del jazmín de Egipto, el azafrán y la madera de cedro en su máxima concentración."
+            }
+          }
+        ]
+      },
+      {
+        "nombre": "Prada",
+        "productos": [
+          {
+            "producto": {
+              "nombre": "Luna Rossa Ocean Le Parfum",
+              "precio": "115.00",
+              "stock": "12",
+              "ml": "100",
+              "descripcion": "Una intensidad potenciada que combina la frescura oceánica con la calidez del ámbar extremo y la esencia de iris."
+            }
+          }
+        ]
+      },
+      {
+        "nombre": "TomFord",
+        "productos": [
+          {
+            "producto": {
+              "nombre": "Ombré Leather Parfum",
+              "precio": "185.00",
+              "stock": "7",
+              "ml": "100",
+              "descripcion": "Un aroma de cuero floral que intensifica la firma original con notas de absoluto de hoja de violeta y madera de cedro."
+            }
+          }
+        ]
+      }
     ]
   }
 ]
