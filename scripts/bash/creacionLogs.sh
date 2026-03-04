@@ -8,6 +8,6 @@ fecha=$(date +"%H:%M-%d/%m/%y")
 
 echo "$fecha | $tipo | $descripcion" >> "$rutaLog"
 
-if [ "$descripcion" == "Fin de programa" ]; then
+if [[ "$descripcion" == "Fin de programa" || "$descripcion" == "Fin de la instalacion" ]]; then
     echo "" >> "$rutaLog"
 fi

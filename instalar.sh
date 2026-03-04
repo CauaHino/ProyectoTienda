@@ -44,6 +44,8 @@ for cat_data in $(jq -c '.[]' "./$json"); do
         marca=$(echo "$marca_data" | jq -r '.nombre')
         rutaMarca="$ruta/$nombreTienda/$tipo/$marca"
         mkdir -p "$rutaMarca"
+        log "INSTALAR" "Marca creada: $marca"
+
 
         for prod_data in $(echo "$marca_data" | jq -c '.productos[]'); do
             
