@@ -1,1 +1,1 @@
-/tiendas/PerfumeriaPaco/Parfum/JeanPaulGaultier/234.json
+/tiendas/PerfumeriaPaco/EauDeParfum/Chanel/105.json

@@ -1,0 +1,20 @@
+14:01-04/03/26 | SESION | Inicio de programa
+14:01-04/03/26 | SESION | Usuario esta viendo la tienda
+14:01-04/03/26 | SESION | Fin de programa
+
+14:01-04/03/26 | SESION | Inicio de programa
+14:03-04/03/26 | BUSQUEDA - CODIGO | Producto encontrado: /tiendas/PerfumeriaPaco/EauDeCologne/4711/100.json
+14:05-04/03/26 | BUSQUEDA - REFERENCIA | Error: No se encontraron productos con ese filtro.
+14:05-04/03/26 | CREACION - TIPO PERFUME | Error: Ya existe un tipo perfume (EauDeToilette) con ese nombre..
+14:05-04/03/26 | CREACION - TIPO PERFUME | Usuario no creo ningun tipo de perfume.
+14:06-04/03/26 | CREACION - MARCA | La marca Bacara se ha creado correctamente en /tiendas/PerfumeriaPaco/EauDeParfum
+14:06-04/03/26 | CREACION - MARCA | Usuario termino de crear la marca
+14:06-04/03/26 | CREACION - PRODUCTO | Error: Ya existe un perfume (Azzaro) con este codigo en la tienda.
+14:07-04/03/26 | CREACION - PRODUCTO | Error: Ya existe un perfume (156) con este codigo en la tienda.
+14:07-04/03/26 | CREACION - PRODUCTO | Error: Ya existe un perfume (234) con este codigo en la tienda.
+14:07-04/03/26 | CREACION - PRODUCTO | Error: Ya existe un perfume (789) con este codigo en la tienda.
+14:08-04/03/26 | CREACION - PRODUCTO | Error: Ya existe un perfume (a) con este codigo en la tienda.
+14:08-04/03/26 | CREACION - PRODUCTO | Usuario no creo ningun producto.
+14:09-04/03/26 | BUSQUEDA - REFERENCIA | Se ha modificado el /tiendas/PerfumeriaPaco/EauDeParfum/Chanel/105.json
+14:09-04/03/26 | SESION | Usuario esta viendo la tienda
+14:36-04/03/26 | IA / ENVIAR CORREO | ¡Datos enviados correctamente!

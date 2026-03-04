@@ -1,7 +1,7 @@
 #!/bin/bash
 
 log(){
-    bash "creacionLogs.sh" "$1" "$2"
+    bash "scripts/bash/creacionLogs.sh" "$1" "$2" "programa.log"
 }
 clear
 

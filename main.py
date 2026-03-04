@@ -150,14 +150,14 @@ def salir():
             seleccion -= 1
         elif tecla == ord('\n'): 
             if seleccion == 0:
-                subprocess.run( ["bash", "scripts/bash/creacionLogs.sh", str("SESION"), str(f"Fin de programa")] )
+                subprocess.run( ["bash", "scripts/bash/creacionLogs.sh", str("SESION"), str(f"Fin de programa"), str("programa.log")] )
                 
                 return False   
             elif seleccion == 1:
                 return True
 
 def menu(terminal):
-    opciones = ["Crear","Buscar", "Ver la tienda", "Publicidad", "Instalar", "Salir"]
+    opciones = ["Crear","Buscar", "Ver la tienda", "Publicidad", "Salir"]
     seleccion = 0
     bucleActivo = True
     
@@ -193,7 +193,7 @@ def menu(terminal):
             elif seleccion == 1:
                 buscar()
             elif seleccion == 2:
-                subprocess.run( ["bash", "scripts/bash/creacionLogs.sh", str("SESION"), str(f"Usuario esta viendo la tienda")] )
+                subprocess.run( ["bash", "scripts/bash/creacionLogs.sh", str("SESION"), str(f"Usuario esta viendo la tienda"), str("programa.log")] )
                 
                 verTienda.listarTienda(terminal)
             elif seleccion == 3:
@@ -201,10 +201,6 @@ def menu(terminal):
                 curses.endwin()
                 subprocess.run( ["bash", "scripts/bash/enviarCorreo.sh"] )
             elif seleccion == 4:
-                terminal.clear()
-                curses.endwin()
-                subprocess.run( ["bash", "./instalar.sh"] )
-            elif seleccion == 5:
                 bucleActivo = salir()
                              
 if __name__ == '__main__':
@@ -225,7 +221,7 @@ if __name__ == '__main__':
     curses.curs_set(0)
 
     try:
-        subprocess.run( ["bash", "scripts/bash/creacionLogs.sh", str("SESION"), str(f"Inicio de programa")] )
+        subprocess.run( ["bash", "scripts/bash/creacionLogs.sh", str("SESION"), str(f"Inicio de programa"), str("programa.log")] )
         menu(terminal)
     finally:
         # Libera los recursos de la terminal
