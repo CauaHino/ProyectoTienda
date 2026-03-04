@@ -31,7 +31,7 @@ elif [ ! -d "$RUTA/$TIENDA" ]; then
     exit 1
 fi
 
-echo "Carpeta $nombreTienda lista. Iniciando creacion de la estructura..."
+echo "Tienda $nombreTienda lista. Iniciando creacion de la estructura..."
 
 sleep 2
 
