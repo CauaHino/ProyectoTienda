@@ -23,7 +23,7 @@ if [ -d "$/g2" ]; then
     sleep 4
 
     log "INSTALAR" "Carpeta g2 encontrada, renombrando a $nombreTienda"
-elif [ ! -d "$RUTA/$TIENDA" ]; then
+elif [ ! -d "$ruta/$nombreTienda" ]; then
     echo "Error: No se ha podido encontrar $nombreTienda en $ruta"
     log "INSTALAR" "Error: No se ha podido encontrar $nombreTienda en $ruta"
 
