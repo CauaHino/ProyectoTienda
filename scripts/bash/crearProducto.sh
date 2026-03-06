@@ -74,7 +74,7 @@ while true; do
 
     perfumeEncontrado=$(find /tiendas/PerfumeriaPaco/ -name "$codigoPerfume.json")
 
-    if [ -n $perfumeEncontrado ]; then
+    if [ -n "$perfumeEncontrado" ]; then
         clear
         echo -e "\nError: Ya existe un perfume ($codigoPerfume) con este codigo en la tienda.\n"
         log "CREACION - PRODUCTO" "Error: Ya existe un perfume ($codigoPerfume) con este codigo en la tienda."
