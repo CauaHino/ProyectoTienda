@@ -1,0 +1,80 @@
+14:47-06/03/26 | INSTALAR | Categoría creada: EauDeCologne
+14:47-06/03/26 | INSTALAR | Marca creada: 4711
+14:47-06/03/26 | INSTALAR | Producto 100 creado: Original Eau de Cologne
+14:47-06/03/26 | INSTALAR | Marca creada: AcquadiParma
+14:47-06/03/26 | INSTALAR | Producto 101 creado: Colonia
+14:47-06/03/26 | INSTALAR | Marca creada: AlvarezGomez
+14:47-06/03/26 | INSTALAR | Producto 102 creado: Agua de Colonia Concentrada
+14:47-06/03/26 | INSTALAR | Marca creada: Guerlain
+14:47-06/03/26 | INSTALAR | Producto 103 creado: Eau de Cologne Impériale
+14:47-06/03/26 | INSTALAR | Marca creada: RogerAndGallet
+14:47-06/03/26 | INSTALAR | Producto 104 creado: Jean Marie Farina
+14:47-06/03/26 | INSTALAR | Categoría creada: EauDeParfum
+14:47-06/03/26 | INSTALAR | Marca creada: Chanel
+14:47-06/03/26 | INSTALAR | Producto 105 creado: Bleu de Chanel
+14:47-06/03/26 | INSTALAR | Producto 106 creado: Coco Mademoiselle
+14:47-06/03/26 | INSTALAR | Marca creada: Dior
+14:47-06/03/26 | INSTALAR | Producto 107 creado: Sauvage
+14:47-06/03/26 | INSTALAR | Marca creada: GiorgioArmani
+14:47-06/03/26 | INSTALAR | Producto 108 creado: Acqua di Gio Profondo
+14:47-06/03/26 | INSTALAR | Marca creada: Lancome
+14:47-06/03/26 | INSTALAR | Producto 109 creado: La Vie Est Belle
+14:47-06/03/26 | INSTALAR | Marca creada: YvesSaintLaurent
+14:47-06/03/26 | INSTALAR | Producto 110 creado: Libre
+14:47-06/03/26 | INSTALAR | Categoría creada: EauDeToilette
+14:47-06/03/26 | INSTALAR | Marca creada: CalvinKlein
+14:47-06/03/26 | INSTALAR | Producto 111 creado: CK One
+14:47-06/03/26 | INSTALAR | Producto 112 creado: Eternity for Men
+14:47-06/03/26 | INSTALAR | Marca creada: DolceAndGabbana
+14:47-06/03/26 | INSTALAR | Producto 113 creado: Light Blue Pour Homme
+14:47-06/03/26 | INSTALAR | Marca creada: HugoBoss
+14:47-06/03/26 | INSTALAR | Producto 114 creado: Boss Bottled
+14:47-06/03/26 | INSTALAR | Marca creada: Lacoste
+14:47-06/03/26 | INSTALAR | Producto 115 creado: L.12.12 Blanc
+14:47-06/03/26 | INSTALAR | Marca creada: PacoRabanne
+14:47-06/03/26 | INSTALAR | Producto 116 creado: 1 Million
+14:47-06/03/26 | INSTALAR | Producto 117 creado: Invictus
+14:47-06/03/26 | INSTALAR | Categoría creada: EauDeToiletteIntense
+14:47-06/03/26 | INSTALAR | Marca creada: IsseyMiyake
+14:47-06/03/26 | INSTALAR | Producto 118 creado: L'Eau d'Issey pour Homme Intense
+14:47-06/03/26 | INSTALAR | Marca creada: Givenchy
+14:47-06/03/26 | INSTALAR | Producto 119 creado: Gentleman Intense
+14:47-06/03/26 | INSTALAR | Marca creada: DolceAndGabbana
+14:47-06/03/26 | INSTALAR | Producto 120 creado: Light Blue Eau Intense
+14:47-06/03/26 | INSTALAR | Marca creada: Kenzo
+14:47-06/03/26 | INSTALAR | Producto 121 creado: Kenzo Homme Intense
+14:47-06/03/26 | INSTALAR | Marca creada: Azzaro
+14:47-06/03/26 | INSTALAR | Producto 122 creado: Wanted Intense
+14:47-06/03/26 | INSTALAR | Categoría creada: Parfum
+14:47-06/03/26 | INSTALAR | Marca creada: Creed
+14:47-06/03/26 | INSTALAR | Producto 123 creado: Aventus
+14:47-06/03/26 | INSTALAR | Marca creada: JeanPaulGaultier
+14:47-06/03/26 | INSTALAR | Producto 124 creado: Scandal Pour Homme Le Parfum
+14:47-06/03/26 | INSTALAR | Producto 125 creado: Le Male Elixir
+14:47-06/03/26 | INSTALAR | Marca creada: MaisonFrancisKurkdjian
+14:47-06/03/26 | INSTALAR | Producto 126 creado: Baccarat Rouge 540 Extrait de Parfum
+14:47-06/03/26 | INSTALAR | Marca creada: Prada
+14:47-06/03/26 | INSTALAR | Producto 127 creado: Luna Rossa Ocean Le Parfum
+14:47-06/03/26 | INSTALAR | Marca creada: TomFord
+14:47-06/03/26 | INSTALAR | Producto 128 creado: Ombré Leather Parfum
+14:47-06/03/26 | INSTALAR | Fin de la instalacion
+
+14:47-06/03/26 | SESION | Inicio de programa
+14:48-06/03/26 | CREACION - TIPO PERFUME | El tipo de perfume EauToilette se ha creado correctamente en /tiendas/PerfumeriaPaco
+14:48-06/03/26 | CREACION - TIPO PERFUME | Usuario va a crear otro tipo de perfume
+14:48-06/03/26 | CREACION - TIPO PERFUME | Error: El nombre del tipo de perfume no puede estar vacio.
+14:48-06/03/26 | SESION | Inicio de programa
+14:48-06/03/26 | CREACION - MARCA | La marca a se ha creado correctamente en /tiendas/PerfumeriaPaco/EauToilette
+14:48-06/03/26 | CREACION - MARCA | Usuario va a crear otra marca
+14:48-06/03/26 | CREACION - MARCA | Usuario no ninguna creo marca.
+14:49-06/03/26 | CREACION - PRODUCTO | Error: Ya existe un perfume (101) con este codigo en la tienda.
+14:49-06/03/26 | CREACION - PRODUCTO | Error: El nombre de la marca no puede estar vacio.
+14:50-06/03/26 | CREACION - PRODUCTO | El archivo json 205.json se ha creado correctamente en /tiendas/PerfumeriaPaco/EauDeCologne/4711
+14:50-06/03/26 | CREACION - PRODUCTO | Usuario termino de crear el producto
+14:50-06/03/26 | BUSQUEDA - CODIGO | Producto encontrado: /tiendas/PerfumeriaPaco/EauDeCologne/4711/205.json
+14:50-06/03/26 | BUSQUEDA - CODIGO | El producto 205.json en /tiendas/PerfumeriaPaco/EauDeCologne/4711/205.json, ha sido modificado
+14:51-06/03/26 | BUSQUEDA - REFERENCIA | Se ha modificado el /tiendas/PerfumeriaPaco/Parfum/JeanPaulGaultier/124.json
+14:51-06/03/26 | SESION | Usuario esta viendo la tienda
+14:52-06/03/26 | IA / ENVIAR CORREO | ¡Datos enviados correctamente!
+14:53-06/03/26 | SESION | Fin de programa
+
